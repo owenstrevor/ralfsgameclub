@@ -170,7 +170,21 @@
       border-top: 1px solid var(--border);
       width: 100%;
       padding-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
     }
+
+    .jobs-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .jobs-link:hover { color: var(--orange); }
 
     .maps-link {
       display: inline-flex;
@@ -254,6 +268,7 @@
     </div>
 
     <footer>
+      <a class="jobs-link" href="jobs.html">We're hiring →</a>
       <a class="maps-link"
          href="https://maps.google.com/?q=407+Calle+Del+Parque,+Santurce,+San+Juan,+PR"
          target="_blank" rel="noopener">

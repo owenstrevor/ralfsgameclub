@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobs — Ralf's Game Club</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'OGC';
+      src: url('assets/fonts/OldschoolGroteskCondensed.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ff5400;
+      --bg:     #111;
+      --text:   #f0ebe3;
+      --body:   #aaa;
+      --muted:  #888;
+      --border: #2a2a2a;
+      --heading-font: 'OGC', 'Arial Narrow', sans-serif;
+      --body-font:    'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      align-self: flex-start;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--orange); }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      height: 160px;
+      width: auto;
+    }
+
+    /* ── Job header ── */
+    .job-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.8rem, 8vw, 4rem);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* ── Meta pills ── */
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.55rem 0.9rem;
+    }
+
+    .pill-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pill-value {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+
+    /* ── Sections ── */
+    .job-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--body);
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    ul li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    ul li::before {
+      content: '—';
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .job-meta { flex-direction: column; }
+      .meta-pill { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <a class="back-link" href="index.html">← Back</a>
+
+    <div class="logo-wrap">
+      <img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club" />
+    </div>
+
+    <div class="job-header">
+      <p class="eyebrow">We're hiring</p>
+      <h1>Game Café Host</h1>
+      <div class="job-meta">
+        <div class="meta-pill">
+          <span class="pill-label">Location</span>
+          <span class="pill-value">San Juan, Puerto Rico</span>
+        </div>
+        <div class="meta-pill">
+          <span class="pill-label">Pay</span>
+          <span class="pill-value">$12–$15 / hr, plus tips</span>
+        </div>
+        <div class="meta-pill">
+          <span class="pill-label">Type</span>
+          <span class="pill-value">Part-time or full-time</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-section">
+      <p class="section-label">About the role</p>
+      <p>This is a hybrid role combining host, game guide, cashier support, café attendant, light waiter-style service, and floor support. The ideal person is great with people, comfortable explaining games, organized, and willing to help with whatever is needed to keep the café running smoothly. You'll help guests pick and learn games, assist with self-checkout, start and manage tabs, bring snacks and drinks to tables, and make sure guests have a great experience throughout their visit.</p>
+    </div>
+
+    <div class="job-section">
+      <p class="section-label">Responsibilities</p>
+      <ul>
+        <li>Welcome guests and explain how the café works</li>
+        <li>Help guests choose board games and card games based on group size, age, experience level, and interests</li>
+        <li>Teach or explain basic rules for board games and card games when needed</li>
+        <li>Help reset games after use and make sure pieces, cards, tokens, and components are returned properly</li>
+        <li>Support guests using retro video game stations, including basic setup, controllers, game selection, and troubleshooting</li>
+        <li>Help customers complete self-checkout for snacks, drinks, merchandise, and other items</li>
+        <li>Answer basic questions about pricing, reservations, memberships, events, and products</li>
+        <li>Monitor the floor to make sure guests are having a good experience</li>
+        <li>Keep tables, game shelves, console areas, and common spaces clean and organized</li>
+        <li>Restock snacks, drinks, and retail items</li>
+        <li>Assist with simple food and beverage service if needed</li>
+        <li>Help manage waitlists, reservations, and table assignments</li>
+        <li>Support game nights, tournaments, private events, and birthday parties</li>
+        <li>Handle light opening and closing duties</li>
+        <li>Communicate guest feedback, missing game pieces, damaged games, equipment issues, or inventory needs to management</li>
+      </ul>
+    </div>
+
+    <div class="job-section">
+      <p class="section-label">Ideal candidate</p>
+      <ul>
+        <li>Loves board games, card games, party games, or tabletop gaming</li>
+        <li>Has some familiarity with retro video games or is excited to learn</li>
+        <li>Friendly, patient, and comfortable talking to guests</li>
+        <li>Good at explaining rules clearly and simply</li>
+        <li>Reliable, punctual, and professional</li>
+        <li>Comfortable using tablets, checkout systems, and basic tech</li>
+        <li>Able to multitask during busy periods</li>
+        <li>Willing to clean, organize, restock, and help wherever needed</li>
+        <li>Comfortable working in a casual, fun, customer-facing environment</li>
+      </ul>
+    </div>
+
+    <div class="job-section">
+      <p class="section-label">Nice to have</p>
+      <ul>
+        <li>Experience in cafés, restaurants, retail, hospitality, game stores, escape rooms, or events</li>
+        <li>Knowledge of modern board games beyond classics like Monopoly, Risk, and Scrabble</li>
+        <li>Interest in trading card games, tabletop RPGs, party games, or hobby gaming communities</li>
+        <li>Familiarity with retro consoles like NES, SNES, Genesis, N64, GameCube, PlayStation, or arcade-style games</li>
+        <li>Bilingual English and Spanish</li>
+        <li>Experience teaching games, hosting events, or working with families and groups</li>
+      </ul>
+    </div>
+
+    <div class="job-section">
+      <p class="section-label">Requirements</p>
+      <ul>
+        <li>Must be dependable and comfortable working with customers</li>
+        <li>Must be able to stand for long periods</li>
+        <li>Must be able to lift and move boxes, games, chairs, or supplies when needed</li>
+        <li>Must be available evenings and weekends</li>
+        <li>Must be comfortable supporting both tabletop games and basic video game setups</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
