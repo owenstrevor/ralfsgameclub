@@ -171,8 +171,30 @@
       flex-shrink: 0;
     }
 
+    /* ── Apply button ── */
+    .apply-wrap {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--body-font);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: 5px;
+      transition: opacity 0.15s;
+    }
+
+    .apply-btn:hover { opacity: 0.85; }
+
     /* ── Responsive ── */
     @media (max-width: 480px) {
+      .apply-btn { display: block; text-align: center; }
       .job-meta { flex-direction: column; }
       .meta-pill { width: 100%; }
     }
@@ -209,24 +231,29 @@
 
     <div class="job-section">
       <p class="section-label">About the role</p>
-      <p>This is a hybrid role combining host, game guide, cashier support, café attendant, light waiter-style service, and floor support. The ideal person is great with people, comfortable explaining games, organized, and willing to help with whatever is needed to keep the café running smoothly. You'll help guests pick and learn games, assist with self-checkout, start and manage tabs, bring snacks and drinks to tables, and make sure guests have a great experience throughout their visit.</p>
+      <p>We are hiring a friendly, reliable, and game-loving host to help run the guest experience at our board game café.</p>
+      <p>This is a hybrid role that combines host, game guide, cashier support, café attendant, light waiter-style service, and floor support. The ideal person is great with people, comfortable explaining games, organized, and willing to help with whatever is needed to keep the café running smoothly.</p>
+      <p>They will help guests pick and learn games, assist with self-checkout, start and manage tabs, bring snacks and drinks to tables, and make sure guests have a great experience throughout their visit.</p>
+      <p>The main focus of the role is board games and card games, with retro video games also being part of the café experience.</p>
     </div>
 
     <div class="job-section">
       <p class="section-label">Responsibilities</p>
       <ul>
         <li>Welcome guests and explain how the café works</li>
-        <li>Help guests choose board games and card games based on group size, age, experience level, and interests</li>
-        <li>Teach or explain basic rules for board games and card games when needed</li>
+        <li>Help guests choose board games and card games based on group size, age, experience level, time available, and interests</li>
+        <li>Teach or explain basic game rules when needed</li>
         <li>Help reset games after use and make sure pieces, cards, tokens, and components are returned properly</li>
-        <li>Support guests using retro video game stations, including basic setup, controllers, game selection, and troubleshooting</li>
+        <li>Support guests using retro video game stations, including basic setup, controllers, game selection, and simple troubleshooting</li>
         <li>Help customers complete self-checkout for snacks, drinks, merchandise, and other items</li>
-        <li>Answer basic questions about pricing, reservations, memberships, events, and products</li>
-        <li>Monitor the floor to make sure guests are having a good experience</li>
+        <li>Start and manage customer tabs when needed</li>
+        <li>Take simple snack, drink, or café orders</li>
+        <li>Bring snacks and drinks to guests at their tables</li>
+        <li>Check in on guests during their visit to make sure they have what they need</li>
+        <li>Help close out tabs and answer basic payment questions</li>
         <li>Keep tables, game shelves, console areas, and common spaces clean and organized</li>
         <li>Restock snacks, drinks, and retail items</li>
-        <li>Assist with simple food and beverage service if needed</li>
-        <li>Help manage waitlists, reservations, and table assignments</li>
+        <li>Help manage waitlists, reservations, table assignments, and guest flow</li>
         <li>Support game nights, tournaments, private events, and birthday parties</li>
         <li>Handle light opening and closing duties</li>
         <li>Communicate guest feedback, missing game pieces, damaged games, equipment issues, or inventory needs to management</li>
@@ -234,41 +261,45 @@
     </div>
 
     <div class="job-section">
-      <p class="section-label">Ideal candidate</p>
+      <p class="section-label">Requirements</p>
       <ul>
-        <li>Loves board games, card games, party games, or tabletop gaming</li>
-        <li>Has some familiarity with retro video games or is excited to learn</li>
+        <li>1+ year of customer-facing experience preferred</li>
+        <li>Experience in hospitality, retail, cafés, restaurants, game stores, events, escape rooms, or entertainment venues is a plus</li>
+        <li>Board game and card game knowledge is strongly preferred, but we are willing to train the right person</li>
+        <li>Familiarity with retro video games is a plus</li>
         <li>Friendly, patient, and comfortable talking to guests</li>
         <li>Good at explaining rules clearly and simply</li>
         <li>Reliable, punctual, and professional</li>
-        <li>Comfortable using tablets, checkout systems, and basic tech</li>
+        <li>Comfortable using tablets, checkout systems, and basic technology</li>
         <li>Able to multitask during busy periods</li>
-        <li>Willing to clean, organize, restock, and help wherever needed</li>
-        <li>Comfortable working in a casual, fun, customer-facing environment</li>
+        <li>Organized and detail-oriented</li>
+        <li>Must be able to stand for long periods</li>
+        <li>Must be able to lift and move boxes, games, chairs, or supplies when needed</li>
+        <li>Must be available evenings and weekends</li>
+        <li>Must be willing to help with cleaning, organizing, restocking, and general café operations</li>
       </ul>
     </div>
 
     <div class="job-section">
-      <p class="section-label">Nice to have</p>
+      <p class="section-label">Preferred qualifications</p>
       <ul>
-        <li>Experience in cafés, restaurants, retail, hospitality, game stores, escape rooms, or events</li>
-        <li>Knowledge of modern board games beyond classics like Monopoly, Risk, and Scrabble</li>
+        <li>Knowledge of modern board games beyond the classics</li>
         <li>Interest in trading card games, tabletop RPGs, party games, or hobby gaming communities</li>
         <li>Familiarity with retro consoles like NES, SNES, Genesis, N64, GameCube, PlayStation, or arcade-style games</li>
         <li>Bilingual English and Spanish</li>
         <li>Experience teaching games, hosting events, or working with families and groups</li>
+        <li>Experience with POS systems, tabs, self-checkout, or café service</li>
       </ul>
     </div>
 
-    <div class="job-section">
-      <p class="section-label">Requirements</p>
-      <ul>
-        <li>Must be dependable and comfortable working with customers</li>
-        <li>Must be able to stand for long periods</li>
-        <li>Must be able to lift and move boxes, games, chairs, or supplies when needed</li>
-        <li>Must be available evenings and weekends</li>
-        <li>Must be comfortable supporting both tabletop games and basic video game setups</li>
-      </ul>
+    <div class="apply-wrap">
+      <a class="apply-btn"
+         href="mailto:trevor@ralfsgameclub.com?cc=vicky@ralfsgameclub.com&subject=Application%3A%20Game%20Caf%C3%A9%20Host">
+        Apply for this role
+      </a>
+      <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">
+        Or email us at <a href="mailto:vicky@ralfsgameclub.com" style="color:var(--muted);">vicky@ralfsgameclub.com</a>
+      </p>
     </div>
 
   </div>
