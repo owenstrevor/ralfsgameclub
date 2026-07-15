@@ -320,17 +320,22 @@
     </div>
 
     <div class="apply-wrap">
-      <a class="apply-btn"
-         href="mailto:trevor@ralfsgameclub.com?cc=vicky@ralfsgameclub.com&subject=Application%3A%20Game%20Caf%C3%A9%20Host">
+      <a class="apply-btn" id="apply-btn" href="#">
         Apply for this role
       </a>
-      <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">
-        Or email us at <a href="mailto:vicky@ralfsgameclub.com" style="color:var(--muted);">vicky@ralfsgameclub.com</a>
-      </p>
     </div>
 
   </div>
   </main>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('apply-btn');
+      var to = ['trevor', 'ralfsgameclub.com'].join('@');
+      var cc = ['vicky', 'ralfsgameclub.com'].join('@');
+      btn.href = 'mailto:' + to + '?cc=' + cc + '&subject=' + encodeURIComponent('Application: Game Café Host');
+    })();
+  </script>
 
 </body>
 </html>
