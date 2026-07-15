@@ -755,7 +755,8 @@
             if (!res.ok) throw new Error('HTTP ' + res.status);
             return res.json();
           })
-          .then(function () {
+          .then(function (json) {
+            if (!json || String(json.success) !== 'true') throw new Error(json && json.message);
             try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
             form.hidden = true;
             draftNote.hidden = true;
