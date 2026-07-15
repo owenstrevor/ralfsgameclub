@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Club — Ralf's Game Club</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'OGC';
+      src: url('assets/fonts/OldschoolGroteskCondensed.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ff5400;
+      --bg:     #111;
+      --surface:#1a1a1a;
+      --text:   #f0ebe3;
+      --body:   #aaa;
+      --muted:  #888;
+      --border: #2a2a2a;
+      --heading-font: 'OGC', 'Arial Narrow', sans-serif;
+      --body-font:    'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Tab nav ── */
+    .tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 2.5rem);
+      padding: 0 1rem;
+    }
+
+    .tab {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab.active {
+      color: var(--text);
+      border-bottom-color: var(--orange);
+    }
+
+    main { padding: 3rem 2rem 5rem; }
+
+    .wrap {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      height: 160px;
+      width: auto;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.8rem, 8vw, 4rem);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    .page-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--body);
+    }
+
+    p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    ul li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    ul li::before {
+      content: '—';
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+
+    .more-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .more-link:hover { color: var(--orange); }
+
+    /* ── CTA ── */
+    .cta-wrap {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: 5px;
+      transition: opacity 0.15s;
+    }
+
+    .cta-btn:hover { opacity: 0.85; }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .cta-note a { color: var(--muted); }
+    .cta-note a:hover { color: var(--orange); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.6rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .maps-link:hover { color: var(--orange); }
+
+    .maps-link svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      main { padding: 2.5rem 1.5rem 4rem; }
+      .cta-btn { display: block; align-self: stretch; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="tab-bar" aria-label="Site">
+    <div class="tab-row">
+      <a class="tab" href="index.html">Home</a>
+      <a class="tab active" href="chess.html" aria-current="page">Chess Club</a>
+      <a class="tab" href="after-school.html">After School</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <div class="logo-wrap">
+        <img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club" />
+      </div>
+
+      <div class="page-header">
+        <p class="eyebrow">World-class chess instruction</p>
+        <h1>Chess Club</h1>
+        <p>Ralf's Chess Club brings world-class chess instruction to Santurce. Led by <strong>experienced coaches</strong>, it's designed to help every player reach their full potential — from first moves to tournament preparation. Everyone's welcome at the table.</p>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">What to expect</p>
+        <ul>
+          <li>Professional instruction by experienced coaches</li>
+          <li>Personalized training by level</li>
+          <li>Tactics, strategy, and game analysis</li>
+          <li>Regular practice and mini tournaments</li>
+          <li>Preparation for competitions</li>
+        </ul>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Visits from GM Luka Budislavejic</p>
+        <p>Members will have the opportunity to learn from and be inspired by <strong>Grandmaster Luka Budislavejic</strong> during his visits, simuls, lectures and special events.</p>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Chess for students</p>
+        <p>The Chess Academy is also at the heart of our <strong>After School Program</strong> for ages 8 – 16, with regular practice, personalized training and mini tournaments every week.</p>
+        <a class="more-link" href="after-school.html">See the After School Program →</a>
+      </div>
+
+      <div class="cta-wrap">
+        <a class="cta-btn"
+           href="mailto:hola@ralfsgameclub.com?subject=Chess%20Club">
+          Join the Chess Club →
+        </a>
+        <p class="cta-note">
+          Or join the community on
+          <a href="https://chat.whatsapp.com/DHEO94Le7h0AWgC6nFynwj" target="_blank" rel="noopener">WhatsApp</a>
+        </p>
+      </div>
+
+      <footer>
+        <a class="maps-link"
+           href="https://maps.google.com/?q=407+Calle+Del+Parque,+Santurce,+San+Juan,+PR"
+           target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          407 Calle Del Parque, Ciudadela de Santurce
+        </a>
+      </footer>
+
+    </div>
+  </main>
+
+</body>
+</html>

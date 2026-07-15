@@ -41,6 +41,45 @@
       color: var(--text);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Tab nav ── */
+    .tab-bar {
+      background: #1a1a1a;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 2.5rem);
+      padding: 0 1rem;
+    }
+
+    .tab {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab.active {
+      color: var(--text);
+      border-bottom-color: var(--orange);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
       padding: 4rem 2rem;
@@ -214,6 +253,15 @@
 </head>
 <body>
 
+  <nav class="tab-bar" aria-label="Site">
+    <div class="tab-row">
+      <a class="tab active" href="index.html" aria-current="page">Home</a>
+      <a class="tab" href="chess.html">Chess Club</a>
+      <a class="tab" href="after-school.html">After School</a>
+    </div>
+  </nav>
+
+  <main>
   <div class="wrap">
 
     <div class="logo">
@@ -282,6 +330,7 @@
     </footer>
 
   </div>
+  </main>
 
 </body>
 </html>

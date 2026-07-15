@@ -33,8 +33,42 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 3rem 2rem 5rem;
     }
+
+    /* ── Tab nav ── */
+    .tab-bar {
+      background: #1a1a1a;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 2.5rem);
+      padding: 0 1rem;
+    }
+
+    .tab {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab.active {
+      color: var(--text);
+      border-bottom-color: var(--orange);
+    }
+
+    main { padding: 3rem 2rem 5rem; }
 
     .wrap {
       width: 100%;
@@ -44,20 +78,6 @@
       flex-direction: column;
       gap: 2.4rem;
     }
-
-    /* ── Back link ── */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-      align-self: flex-start;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover { color: var(--orange); }
 
     /* ── Logo ── */
     .logo-wrap {
@@ -202,9 +222,16 @@
 </head>
 <body>
 
-  <div class="wrap">
+  <nav class="tab-bar" aria-label="Site">
+    <div class="tab-row">
+      <a class="tab" href="index.html">Home</a>
+      <a class="tab" href="chess.html">Chess Club</a>
+      <a class="tab" href="after-school.html">After School</a>
+    </div>
+  </nav>
 
-    <a class="back-link" href="index.html">← Back</a>
+  <main>
+  <div class="wrap">
 
     <div class="logo-wrap">
       <img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club" />
@@ -303,6 +330,7 @@
     </div>
 
   </div>
+  </main>
 
 </body>
 </html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>After School Program — Ralf's Game Club</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'OGC';
+      src: url('assets/fonts/OldschoolGroteskCondensed.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ff5400;
+      --bg:     #111;
+      --surface:#1a1a1a;
+      --text:   #f0ebe3;
+      --body:   #aaa;
+      --muted:  #888;
+      --border: #2a2a2a;
+      --heading-font: 'OGC', 'Arial Narrow', sans-serif;
+      --body-font:    'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Tab nav ── */
+    .tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 2.5rem);
+      padding: 0 1rem;
+    }
+
+    .tab {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab.active {
+      color: var(--text);
+      border-bottom-color: var(--orange);
+    }
+
+    main { padding: 3rem 2rem 5rem; }
+
+    .wrap {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      height: 160px;
+      width: auto;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.8rem, 8vw, 4rem);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* ── Meta pills ── */
+    .page-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.55rem 0.9rem;
+    }
+
+    .pill-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pill-value {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    .page-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--body);
+    }
+
+    p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    ul li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    ul li::before {
+      content: '—';
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* ── Offer blocks ── */
+    .offer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .offer-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .offer ul { margin-top: 0.4rem; }
+
+    /* ── Daily schedule ── */
+    .schedule { display: flex; flex-direction: column; }
+
+    .schedule-row {
+      display: flex;
+      gap: 1.2rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .schedule-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .schedule-row:first-child { padding-top: 0; }
+
+    .schedule-time {
+      flex-shrink: 0;
+      width: 7.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--orange);
+      padding-top: 0.15rem;
+    }
+
+    .schedule-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .schedule-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .schedule-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* ── Tuition ── */
+    .tuition-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tuition-card {
+      flex: 1 1 240px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .tuition-price {
+      font-family: var(--heading-font);
+      font-size: 2.4rem;
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .tuition-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .tuition-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* ── CTA ── */
+    .cta-wrap {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: 5px;
+      transition: opacity 0.15s;
+    }
+
+    .cta-btn:hover { opacity: 0.85; }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .cta-note a { color: var(--muted); }
+    .cta-note a:hover { color: var(--orange); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.6rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .maps-link:hover { color: var(--orange); }
+
+    .maps-link svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      main { padding: 2.5rem 1.5rem 4rem; }
+      .cta-btn { display: block; align-self: stretch; text-align: center; }
+      .page-meta { flex-direction: column; }
+      .meta-pill { width: 100%; }
+      .schedule-row { flex-direction: column; gap: 0.3rem; }
+      .schedule-time { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="tab-bar" aria-label="Site">
+    <div class="tab-row">
+      <a class="tab" href="index.html">Home</a>
+      <a class="tab" href="chess.html">Chess Club</a>
+      <a class="tab active" href="after-school.html" aria-current="page">After School</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <div class="logo-wrap">
+        <img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club" />
+      </div>
+
+      <div class="page-header">
+        <p class="eyebrow">Learn. Play. Compete. Grow.</p>
+        <h1>After School<br />Program</h1>
+        <p>A unique after school experience where <strong>homework comes first</strong> and fun, learning, and skills come next.</p>
+        <div class="page-meta">
+          <div class="meta-pill">
+            <span class="pill-label">Ages</span>
+            <span class="pill-value">8 – 16</span>
+          </div>
+          <div class="meta-pill">
+            <span class="pill-label">Hours</span>
+            <span class="pill-value">3:00 PM – 6:00 PM · extended care until 6:30 PM</span>
+          </div>
+          <div class="meta-pill">
+            <span class="pill-label">Spaces</span>
+            <span class="pill-value">Limited</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">What we offer</p>
+
+        <div class="offer">
+          <p class="offer-title">Homework First</p>
+          <p>Daily academic support and supervision to help students stay on track and succeed.</p>
+        </div>
+
+        <div class="offer">
+          <p class="offer-title">Chess Academy</p>
+          <p>World-class chess instruction, led by experienced coaches and designed to help every student reach their full potential.</p>
+          <ul>
+            <li>Professional instruction by experienced coaches</li>
+            <li>Personalized training by level</li>
+            <li>Tactics, strategy, and game analysis</li>
+            <li>Regular practice and mini tournaments</li>
+            <li>Preparation for competitions</li>
+            <li>Occasional visits from GM Luka Budislavejic</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <p class="offer-title">Gaming Lab</p>
+          <p>Organized gaming sessions, tournaments and team challenges in a safe and supervised space.</p>
+        </div>
+
+        <div class="offer">
+          <p class="offer-title">Board Games</p>
+          <p>Discover new games, practice strategy, teamwork and problem solving.</p>
+        </div>
+
+        <div class="offer">
+          <p class="offer-title">Literature Club</p>
+          <p>Each student will write a short story during the semester. At the end, we will publish a compilation of all the stories.</p>
+        </div>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Visits from GM Luka Budislavejic</p>
+        <p>Students will have the opportunity to learn from and be inspired by <strong>Grandmaster Luka Budislavejic</strong> during his visits, simuls, lectures and special events.</p>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Daily schedule</p>
+        <div class="schedule">
+          <div class="schedule-row">
+            <span class="schedule-time">2:45 – 3:30 PM</span>
+            <div class="schedule-body">
+              <span class="schedule-title">Arrival time</span>
+              <span class="schedule-desc">Check-in, snack time and settle in.</span>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-time">3:30 – 4:15 PM</span>
+            <div class="schedule-body">
+              <span class="schedule-title">Homework</span>
+              <span class="schedule-desc">Complete assignments, study for tests, get help and stay organized.</span>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-time">4:15 PM onwards</span>
+            <div class="schedule-body">
+              <span class="schedule-title">Main activity of the day</span>
+              <span class="schedule-desc">Chess Academy, Gaming Lab, Board Games, Literature Club or special activities. Students enjoy learning, competing and having fun every day.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Tuition</p>
+        <div class="tuition-grid">
+          <div class="tuition-card">
+            <span class="tuition-price">$100</span>
+            <span class="tuition-label">Per week</span>
+            <span class="tuition-desc">Includes all program activities, materials and daily snack.</span>
+          </div>
+          <div class="tuition-card">
+            <span class="tuition-price">+$50</span>
+            <span class="tuition-label">Extra per week</span>
+            <span class="tuition-desc">Extended care until 6:30 PM with supervised activities.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section">
+        <p class="section-label">Please bring</p>
+        <ul>
+          <li>Water bottle</li>
+          <li>Snacks</li>
+          <li>School materials</li>
+          <li>A positive attitude</li>
+        </ul>
+      </div>
+
+      <div class="cta-wrap">
+        <a class="cta-btn"
+           href="mailto:hola@ralfsgameclub.com?subject=After%20School%20Program">
+          Reserve a spot →
+        </a>
+        <p class="cta-note">
+          Spaces are limited. Questions? Email <a href="mailto:hola@ralfsgameclub.com">hola@ralfsgameclub.com</a>
+        </p>
+      </div>
+
+      <footer>
+        <a class="maps-link"
+           href="https://maps.google.com/?q=407+Calle+Del+Parque,+Santurce,+San+Juan,+PR"
+           target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          407 Calle Del Parque, Ciudadela de Santurce
+        </a>
+      </footer>
+
+    </div>
+  </main>
+
+</body>
+</html>
