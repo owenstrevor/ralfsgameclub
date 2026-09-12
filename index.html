@@ -119,6 +119,18 @@
       color: var(--muted);
     }
 
+    a.eyebrow {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    a.eyebrow:hover,
+    a.eyebrow:focus-visible {
+      color: var(--text);
+      border-bottom-color: var(--orange);
+    }
+
     h1 {
       font-family: var(--heading-font);
       font-size: clamp(3rem, 10vw, 4.5rem);
@@ -126,6 +138,45 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text);
+    }
+
+    .hours {
+      width: min(100%, 440px);
+      margin-top: 0.7rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+    }
+
+    .hours-row {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+      padding: 0.65rem 0.25rem;
+      text-align: left;
+    }
+
+    .hours-row + .hours-row { border-top: 1px solid var(--border); }
+
+    .hours-days {
+      color: var(--orange);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hours-time {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .hours-note {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--muted);
+      font-size: 0.8rem;
     }
 
     /* ── Rule ── */
@@ -248,6 +299,7 @@
       .logo img { height: 190px; }
       .wrap { gap: 2rem; }
       .about { font-size: 1rem; }
+      .hours-row { grid-template-columns: 6.6rem 1fr; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -256,7 +308,7 @@
   <nav class="tab-bar" aria-label="Site">
     <div class="tab-row">
       <a class="tab active" href="index.html" aria-current="page">Home</a>
-      <a class="tab" href="chess.html">Chess Club</a>
+      <a class="tab" href="chess.html">Chess Program</a>
       <a class="tab" href="after-school.html">After School</a>
     </div>
   </nav>
@@ -269,15 +321,34 @@
     </div>
 
     <div class="headline">
-      <p class="eyebrow">San Juan, Puerto Rico</p>
-      <h1>Nearly<br />Open...</h1>
+      <a class="eyebrow"
+         href="https://www.google.com/maps/place/Ralf%E2%80%99s+Game+Club/@18.445228,-66.0684355,17z/data=!3m1!4b1!4m6!3m5!1s0x8c036f0068091727:0xea4f56611031c398!8m2!3d18.445228!4d-66.0658606!16s%2Fg%2F11njymghd9?authuser=0&amp;entry=ttu&amp;g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+         target="_blank" rel="noopener"
+         aria-label="Open 407 Calle Del Parque, San Juan, Puerto Rico in Google Maps">
+        407 Calle Del Parque, San Juan, Puerto Rico ↗
+      </a>
+      <h1>Opening Hours</h1>
+      <div class="hours" aria-label="Regular opening hours">
+        <div class="hours-row">
+          <span class="hours-days">Mon–Fri</span>
+          <span class="hours-time">3:00 PM–6:00 PM<span class="hours-note">After School Program only</span></span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-days">Wed–Sat</span>
+          <span class="hours-time">1:00 PM–10:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-days">Sun</span>
+          <span class="hours-time">1:00 PM–6:00 PM</span>
+        </div>
+      </div>
     </div>
 
     <div class="rule"></div>
 
     <p class="about">
       Ralf's Game Club is a <strong>board game cafe and community event space</strong>
-      opening next to <strong>Ciudadela de Santurce</strong>. Come in for a game night,
+      located next to <strong>Ciudadela de Santurce</strong>. Come in for a game night,
       discover a new favorite, or book the space for your next gathering.
       Everyone's welcome at the table.
     </p>
