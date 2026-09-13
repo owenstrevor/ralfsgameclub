@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Ralf's Game Club</title>
+  <meta name="description" content="See upcoming events and the regular weekly schedule at Ralf's Game Club in San Juan, Puerto Rico." />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'OGC';
+      src: url('assets/fonts/OldschoolGroteskCondensed.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ff5400;
+      --bg: #111;
+      --surface: #181818;
+      --text: #f0ebe3;
+      --body: #aaa;
+      --muted: #888;
+      --border: #2a2a2a;
+      --heading-font: 'OGC', 'Arial Narrow', sans-serif;
+      --body-font: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+    }
+
+    .tab-bar { background: #1a1a1a; border-bottom: 1px solid var(--border); }
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(0.85rem, 4vw, 2.5rem);
+      padding: 0 1rem;
+    }
+    .tab {
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      padding: 1rem 0.2rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--text); border-bottom-color: var(--orange); }
+
+    main { padding: 3.5rem 1.25rem 5rem; }
+    .wrap { width: min(100%, 900px); margin: 0 auto; }
+
+    .page-header {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo img { display: block; width: 120px; height: auto; }
+    .eyebrow {
+      color: var(--orange);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      margin-bottom: 0.55rem;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(3.4rem, 9vw, 6rem);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .calendar-shell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .calendar-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .month-title {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .calendar-actions { display: flex; gap: 0.5rem; }
+    .calendar-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #111;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.15rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .calendar-button:hover,
+    .calendar-button:focus-visible { border-color: var(--orange); color: var(--orange); }
+
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+    .weekday {
+      padding: 0.75rem 0.35rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    .day {
+      min-height: 92px;
+      padding: 0.65rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--body);
+      font-size: 0.9rem;
+    }
+    .day:nth-child(7n) { border-right: none; }
+    .day.muted { color: #555; }
+    .day.today span {
+      display: inline-grid;
+      place-items: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin: -0.25rem;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #111;
+      font-weight: 500;
+    }
+
+    .empty-state {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.25rem;
+      background: #141414;
+    }
+    .empty-state strong { display: block; margin-bottom: 0.3rem; font-weight: 500; }
+    .empty-state p { color: var(--body); font-size: 0.92rem; line-height: 1.5; }
+    .notify-link {
+      flex-shrink: 0;
+      color: var(--orange);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .notify-link:hover { text-decoration: underline; }
+
+    .weekly {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .schedule-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.15rem 1.25rem;
+    }
+    .schedule-card .label {
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .schedule-card h2 {
+      margin: 0.45rem 0 0.35rem;
+      font-family: var(--heading-font);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .schedule-card p { color: var(--body); font-size: 0.9rem; line-height: 1.55; }
+    .schedule-card a { color: var(--text); }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--body); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 680px) {
+      .tab-row { justify-content: flex-start; overflow-x: auto; }
+      main { padding-top: 2.5rem; }
+      .page-header { grid-template-columns: 82px 1fr; gap: 1.25rem; }
+      .logo img { width: 82px; }
+      .calendar-toolbar { padding: 1rem; }
+      .day { min-height: 62px; padding: 0.45rem; }
+      .empty-state { align-items: flex-start; flex-direction: column; }
+      .weekly { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="tab-bar" aria-label="Site">
+    <div class="tab-row">
+      <a class="tab" href="index.html">Home</a>
+      <a class="tab" href="chess.html">Chess Program</a>
+      <a class="tab" href="after-school.html">After School</a>
+      <a class="tab active" href="events.html" aria-current="page">Events</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+      <header class="page-header">
+        <a class="logo" href="index.html" aria-label="Ralf's Game Club home">
+          <img src="assets/images/Ralfs Game Club Logo.svg" alt="" />
+        </a>
+        <div>
+          <p class="eyebrow">What's happening at Ralf's</p>
+          <h1>Event Calendar</h1>
+        </div>
+      </header>
+
+      <section class="calendar-shell" aria-labelledby="calendar-month">
+        <div class="calendar-toolbar">
+          <h2 class="month-title" id="calendar-month" aria-live="polite"></h2>
+          <div class="calendar-actions">
+            <button class="calendar-button" type="button" id="previous-month" aria-label="Previous month">←</button>
+            <button class="calendar-button" type="button" id="next-month" aria-label="Next month">→</button>
+          </div>
+        </div>
+        <div class="calendar-grid" aria-hidden="true">
+          <div class="weekday">Sun</div><div class="weekday">Mon</div><div class="weekday">Tue</div>
+          <div class="weekday">Wed</div><div class="weekday">Thu</div><div class="weekday">Fri</div><div class="weekday">Sat</div>
+        </div>
+        <div class="calendar-grid" id="calendar-days" role="grid" aria-label="Event calendar dates"></div>
+        <div class="empty-state">
+          <div>
+            <strong>Special events coming soon</strong>
+            <p>New game nights, tournaments, and community events will be announced here.</p>
+          </div>
+          <a class="notify-link" href="https://instagram.com/ralfsgameclub" target="_blank" rel="noopener">Follow updates →</a>
+        </div>
+      </section>
+
+      <section class="weekly" aria-label="Regular weekly schedule">
+        <article class="schedule-card">
+          <p class="label">Monday–Friday</p>
+          <h2>After School Program</h2>
+          <p>3:00 PM–6:00 PM. <a href="after-school.html">See program details →</a></p>
+        </article>
+        <article class="schedule-card">
+          <p class="label">Regular hours</p>
+          <h2>Game Club</h2>
+          <p>Wednesday–Saturday, 1:00 PM–9:30 PM<br />Sunday, 1:00 PM–6:00 PM</p>
+        </article>
+      </section>
+
+      <footer>
+        <span>© 2026 Ralf's Game Club</span>
+        <a href="https://www.google.com/maps/place/Ralf%E2%80%99s+Game+Club/@18.445228,-66.0684355,17z/data=!3m1!4b1!4m6!3m5!1s0x8c036f0068091727:0xea4f56611031c398!8m2!3d18.445228!4d-66.0658606!16s%2Fg%2F11njymghd9" target="_blank" rel="noopener">407 Calle Del Parque ↗</a>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const monthTitle = document.getElementById('calendar-month');
+    const daysGrid = document.getElementById('calendar-days');
+    const today = new Date();
+    let visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+    function renderCalendar() {
+      const year = visibleMonth.getFullYear();
+      const month = visibleMonth.getMonth();
+      monthTitle.textContent = visibleMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      daysGrid.innerHTML = '';
+
+      const firstWeekday = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPreviousMonth = new Date(year, month, 0).getDate();
+
+      for (let cell = 0; cell < 42; cell += 1) {
+        const day = document.createElement('div');
+        day.className = 'day';
+        day.setAttribute('role', 'gridcell');
+        let number;
+
+        if (cell < firstWeekday) {
+          number = daysInPreviousMonth - firstWeekday + cell + 1;
+          day.classList.add('muted');
+        } else if (cell >= firstWeekday + daysInMonth) {
+          number = cell - firstWeekday - daysInMonth + 1;
+          day.classList.add('muted');
+        } else {
+          number = cell - firstWeekday + 1;
+          if (number === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            day.classList.add('today');
+            day.setAttribute('aria-current', 'date');
+          }
+        }
+
+        const numberLabel = document.createElement('span');
+        numberLabel.textContent = number;
+        day.appendChild(numberLabel);
+        daysGrid.appendChild(day);
+      }
+    }
+
+    document.getElementById('previous-month').addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
+      renderCalendar();
+    });
+
+    document.getElementById('next-month').addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+  </script>
+</body>
+</html>
