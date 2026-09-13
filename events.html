@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Events — Ralf's Game Club</title>
-  <meta name="description" content="Discover and register for community events at Ralf's Game Club in San Juan, Puerto Rico." />
+  <meta name="description" content="Discover community events at Ralf's Game Club in San Juan, Puerto Rico." />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://luma.com" />
+  <link rel="preconnect" href="https://images.lumacdn.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     @font-face {
@@ -47,7 +47,7 @@
     .tab.active { color: var(--text); border-bottom-color: var(--orange); }
     main { padding: 3.5rem 1.25rem 5rem; }
     .wrap { width: min(100%, 900px); margin: 0 auto; }
-    .page-header { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 2rem; margin-bottom: 2.5rem; }
+    .page-header { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 2rem; margin-bottom: 3rem; }
     .logo img { display: block; width: 120px; height: auto; }
     .eyebrow {
       color: var(--orange);
@@ -65,83 +65,67 @@
       line-height: 0.9;
       text-transform: uppercase;
     }
-    .luma-intro {
+    .events-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
-      padding: 1.35rem 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
+      gap: 1rem;
+      margin-bottom: 1.2rem;
     }
-    .luma-intro h2 {
-      margin-bottom: 0.35rem;
-      font-family: var(--heading-font);
-      font-size: 1.8rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .luma-intro p { color: var(--body); font-size: 0.95rem; line-height: 1.55; }
-    .profile-link {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      background: var(--orange);
-      color: #111;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .profile-link:hover { background: #ff6a21; }
-    .featured-event {
-      display: grid;
-      grid-template-columns: 92px 1fr auto;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 1rem;
-      padding: 1.25rem 1.5rem;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--orange);
-      border-radius: 9px;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .featured-event:hover { border-color: var(--orange); transform: translateY(-2px); }
-    .event-date {
-      color: var(--orange);
-      font-family: var(--heading-font);
-      font-size: 1.45rem;
-      letter-spacing: 0.05em;
-      line-height: 1;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .event-date strong { display: block; margin-top: 0.25rem; color: var(--text); font-size: 2.2rem; font-weight: 400; }
-    .event-copy h2 { color: var(--text); font-size: 1.05rem; font-weight: 500; }
-    .event-copy p { margin-top: 0.35rem; color: var(--body); font-size: 0.9rem; line-height: 1.5; }
-    .event-arrow { color: var(--orange); font-size: 1.4rem; }
-    .feed-label {
-      margin: 2.5rem 0 1rem;
+    .events-heading h2 {
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-    .luma-frame { width: 100%; min-height: 1120px; border: 0; border-radius: 10px; background: #181818; }
+    .luma-link { color: var(--orange); font-size: 0.82rem; font-weight: 500; text-decoration: none; }
+    .luma-link:hover { text-decoration: underline; }
+    .event-date-line {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 1rem 1rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .event-date-line::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      margin-left: -1rem;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+    .event-date-line span { color: var(--muted); font-weight: 400; }
+    .event-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .event-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+    .event-card > div { min-width: 0; }
+    .event-time { margin-bottom: 0.65rem; color: var(--orange); font-size: 0.95rem; }
+    .event-card h3 { overflow-wrap: anywhere; font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 500; line-height: 1.2; }
+    .presenter { margin-top: 0.85rem; color: var(--text); font-size: 0.95rem; }
+    .presenter span { color: var(--muted); }
+    .location { margin-top: 0.45rem; color: var(--muted); font-size: 0.95rem; }
+    .event-image { width: 190px; aspect-ratio: 1; border-radius: 9px; object-fit: cover; }
+    .event-arrow { position: absolute; right: 1.6rem; bottom: 1.3rem; color: var(--orange); font-size: 1.25rem; }
     footer {
       display: flex;
       justify-content: space-between;
       gap: 1rem;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
       padding-top: 1.25rem;
       border-top: 1px solid var(--border);
       color: var(--muted);
@@ -149,17 +133,15 @@
     }
     footer a { color: var(--body); text-decoration: none; }
     footer a:hover { color: var(--orange); }
-    @media (max-width: 680px) {
+    @media (max-width: 760px) {
       .tab-row { justify-content: flex-start; overflow-x: auto; }
       main { padding-top: 2.5rem; }
-      .page-header { grid-template-columns: 82px 1fr; gap: 1.25rem; }
+      .page-header { grid-template-columns: 82px 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
       .logo img { width: 82px; }
-      .luma-intro { align-items: flex-start; flex-direction: column; }
-      .profile-link { width: 100%; }
-      .featured-event { grid-template-columns: 64px 1fr auto; padding: 1rem; gap: 0.85rem; }
-      .event-date { font-size: 1.1rem; }
-      .event-date strong { font-size: 1.8rem; }
-      .luma-frame { min-height: 1000px; }
+      .events-heading { align-items: flex-start; flex-direction: column; }
+      .event-card { grid-template-columns: 1fr 112px; gap: 1rem; padding: 1.2rem; }
+      .event-image { width: 112px; }
+      .event-arrow { display: none; }
     }
   </style>
 </head>
@@ -183,30 +165,23 @@
           <h1>Community Events</h1>
         </div>
       </header>
-      <section class="luma-intro" aria-labelledby="luma-heading">
-        <div>
-          <h2 id="luma-heading">Ralf's on Luma</h2>
-          <p>Follow Ralf's Game Club on Luma to discover new game nights, tournaments, and community gatherings.</p>
+      <section aria-labelledby="upcoming-events-heading">
+        <div class="events-heading">
+          <h2 id="upcoming-events-heading">Upcoming events</h2>
+          <a class="luma-link" href="https://luma.com/ralfsgameclub?k=c" target="_blank" rel="noopener">Ralf's Game Club on Luma ↗</a>
         </div>
-        <a class="profile-link" href="https://luma.com/ralfsgameclub?k=c" target="_blank" rel="noopener">View Luma profile ↗</a>
+        <p class="event-date-line">Oct 1 <span>Thursday</span></p>
+        <a class="event-card" href="https://luma.com/tnnwm9wg" target="_blank" rel="noopener" aria-label="View Board Game BAZAAR at Ralf's on Luma">
+          <div>
+            <p class="event-time">2:00 PM–9:00 PM</p>
+            <h3>Board Game BAZAAR @Ralf's</h3>
+            <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
+            <p class="location">407 Calle Del Parque, San Juan</p>
+          </div>
+          <img class="event-image" src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/tr/20764a0d-6257-441a-b586-a701eea4527a.png" alt="Board Game BAZAAR at Ralf's event artwork" />
+          <span class="event-arrow" aria-hidden="true">→</span>
+        </a>
       </section>
-      <a class="featured-event" href="https://luma.com/tnnwm9wg" target="_blank" rel="noopener" aria-label="View Board Game BAZAAR at Ralf's on Luma">
-        <div class="event-date">Oct<strong>1</strong></div>
-        <div class="event-copy">
-          <h2>Board Game BAZAAR @Ralf's</h2>
-          <p>Thursday · 2:00 PM–9:00 PM<br />407 Calle Del Parque, San Juan</p>
-        </div>
-        <span class="event-arrow" aria-hidden="true">→</span>
-      </a>
-      <p class="feed-label">All upcoming events</p>
-      <iframe
-        class="luma-frame"
-        src="https://luma.com/embed/calendar/cal-uNKdFODQoQwQQWH/events?lt=light"
-        title="Ralf's Game Club events on Luma"
-        scrolling="no"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
       <footer>
         <span>© 2026 Ralf's Game Club</span>
         <a href="https://www.google.com/maps/place/Ralf%E2%80%99s+Game+Club/@18.445228,-66.0684355,17z/data=!3m1!4b1!4m6!3m5!1s0x8c036f0068091727:0xea4f56611031c398!8m2!3d18.445228!4d-66.0658606!16s%2Fg%2F11njymghd9" target="_blank" rel="noopener">407 Calle Del Parque ↗</a>
