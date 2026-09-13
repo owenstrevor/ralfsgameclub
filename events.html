@@ -98,6 +98,7 @@
       background: var(--orange);
     }
     .event-date-line span { color: var(--muted); font-weight: 400; }
+    .event-card + .event-date-line { margin-top: 2.5rem; }
     .event-card {
       position: relative;
       display: grid;
@@ -120,6 +121,7 @@
     .presenter span { color: var(--muted); }
     .location { margin-top: 0.45rem; color: var(--muted); font-size: 0.95rem; }
     .event-image { width: 190px; aspect-ratio: 1; border-radius: 9px; object-fit: cover; }
+    .event-image.poster { object-fit: contain; background: #f3eee4; }
     .event-arrow { position: absolute; right: 1.6rem; bottom: 1.3rem; color: var(--orange); font-size: 1.25rem; }
     footer {
       display: flex;
@@ -170,6 +172,17 @@
           <h2 id="upcoming-events-heading">Upcoming events</h2>
           <a class="luma-link" href="https://luma.com/ralfsgameclub?k=c" target="_blank" rel="noopener">Ralf's Game Club on Luma ↗</a>
         </div>
+        <p class="event-date-line">Sep 23 <span>Wednesday</span></p>
+        <a class="event-card" href="https://luma.com/x3sr0h4m" target="_blank" rel="noopener" aria-label="View the BitDevs San Juan Monthly Meetup on Luma">
+          <div>
+            <p class="event-time">7:00 PM–9:00 PM</p>
+            <h3>BitDevs San Juan Monthly Meetup: Breaches, Vaults &amp; Quantum-Safe Bitcoin</h3>
+            <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
+            <p class="location">407 Calle Del Parque, San Juan</p>
+          </div>
+          <img class="event-image poster" src="assets/images/bitdevs-san-juan-sept-23.png" alt="BitDevs San Juan Monthly Meetup poster" />
+          <span class="event-arrow" aria-hidden="true">→</span>
+        </a>
         <p class="event-date-line">Oct 1 <span>Thursday</span></p>
         <a class="event-card" href="https://luma.com/tnnwm9wg" target="_blank" rel="noopener" aria-label="View Board Game BAZAAR at Ralf's on Luma">
           <div>
