@@ -1,0 +1,5 @@
+.subpage-bar{min-height:82px;display:flex;align-items:center;padding:0 clamp(18px,4vw,64px);background:#f7f7f5;border-top:3px solid #ff5400;border-bottom:1px solid #d9d7d2;position:relative;z-index:20}
+.subpage-logo{display:flex;align-items:center;width:max-content}
+.subpage-logo img{display:block;width:64px;height:72px;object-fit:contain;filter:drop-shadow(2px 3px 0 rgba(0,0,0,.18))}
+.subpage-bar .subpage-tools{margin-left:auto}
+@media(max-width:760px){.subpage-bar{min-height:72px;padding:0 16px}.subpage-logo img{width:50px;height:59px}}
