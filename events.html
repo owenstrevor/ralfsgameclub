@@ -48,8 +48,7 @@
     .tab.active { color: var(--text); border-bottom-color: var(--orange); }
     main { padding: 3.5rem 1.25rem 5rem; }
     .wrap { width: min(100%, 900px); margin: 0 auto; }
-    .page-header { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 2rem; margin-bottom: 3rem; }
-    .logo img { display: block; width: 120px; height: auto; }
+    .page-header { margin-bottom: 3rem; }
     .eyebrow {
       color: var(--orange);
       font-size: 0.82rem;
@@ -121,6 +120,38 @@
     .presenter { margin-top: 0.85rem; color: var(--text); font-size: 0.95rem; }
     .presenter span { color: var(--muted); }
     .location { margin-top: 0.45rem; color: var(--muted); font-size: 0.95rem; }
+    .event-attendees {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+      color: var(--body);
+      font-size: 0.82rem;
+    }
+    .attendee-avatars { display: flex; align-items: center; }
+    .attendee-avatar {
+      width: 34px;
+      height: 34px;
+      margin-left: -8px;
+      border: 2px solid var(--surface);
+      border-radius: 50%;
+      background: #f2eee7;
+      object-fit: cover;
+    }
+    .attendee-avatar:first-child { margin-left: 0; }
+    .attendee-empty {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px dashed #555;
+      border-radius: 50%;
+      color: var(--orange);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .event-attendees strong { color: var(--text); font-weight: 500; }
     .event-image { width: 190px; aspect-ratio: 1; border-radius: 9px; object-fit: cover; }
     .event-image.poster { object-fit: contain; background: #f3eee4; }
     .event-arrow { position: absolute; right: 1.6rem; bottom: 1.3rem; color: var(--orange); font-size: 1.25rem; }
@@ -139,8 +170,7 @@
     @media (max-width: 760px) {
       .tab-row { justify-content: flex-start; overflow-x: auto; }
       main { padding-top: 2.5rem; }
-      .page-header { grid-template-columns: 82px 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
-      .logo img { width: 82px; }
+      .page-header { margin-bottom: 2.5rem; }
       .events-heading { align-items: flex-start; flex-direction: column; }
       .event-card { grid-template-columns: 1fr 112px; gap: 1rem; padding: 1.2rem; }
       .event-image { width: 112px; }
@@ -155,9 +185,6 @@
   <main>
     <div class="wrap">
       <header class="page-header">
-        <a class="logo" href="index.html" aria-label="Ralf's Game Club home">
-          <img src="assets/images/Ralfs Game Club Logo.svg" alt="" />
-        </a>
         <div>
           <p class="eyebrow">What's happening at Ralf's</p>
           <h1>Community Events</h1>
@@ -175,6 +202,10 @@
             <h3>BitDevs San Juan Monthly Meetup: Breaches, Vaults &amp; Quantum-Safe Bitcoin</h3>
             <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
             <p class="location">407 Calle Del Parque, San Juan</p>
+            <div class="event-attendees" aria-label="No public attendees yet on Luma">
+              <span class="attendee-empty" aria-hidden="true">+</span>
+              <span><strong>Be the first to join</strong><br />No public attendees yet on Luma</span>
+            </div>
           </div>
           <img class="event-image poster" src="assets/images/bitdevs-san-juan-sept-23.png" alt="BitDevs San Juan Monthly Meetup poster" />
           <span class="event-arrow" aria-hidden="true">→</span>
@@ -186,6 +217,13 @@
             <h3>Board Game BAZAAR @Ralf's</h3>
             <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
             <p class="location">407 Calle Del Parque, San Juan</p>
+            <div class="event-attendees" aria-label="Two people registered on Luma: Samuel and Xavier Vazquez">
+              <span class="attendee-avatars" aria-hidden="true">
+                <img class="attendee-avatar" src="https://cdn.lu.ma/avatars-default/avatar_16.png" alt="" />
+                <img class="attendee-avatar" src="https://cdn.lu.ma/avatars-default/avatar_2.png" alt="" />
+              </span>
+              <span><strong>2 people joined</strong><br />Samuel &amp; Xavier Vazquez</span>
+            </div>
           </div>
           <img class="event-image" src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/tr/20764a0d-6257-441a-b586-a701eea4527a.png" alt="Board Game BAZAAR at Ralf's event artwork" />
           <span class="event-arrow" aria-hidden="true">→</span>

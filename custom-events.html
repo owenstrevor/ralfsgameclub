@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Custom Hosted Events — Ralf's Game Club</title>
+  <meta name="description" content="Paid custom event planning and hosting at Ralf's Game Club in Santurce, San Juan.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="subpage-brand.css">
+  <link rel="stylesheet" href="site-header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <script src="site-header.js" defer></script>
+  <style>
+    :root{--orange:#ff5400;--yellow:#ffd400;--ink:#0b0b0b;--surface:#171513;--paper:#f6f2e9;--muted:#aaa5a0;--line:rgba(255,255,255,.17)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--ink);color:var(--paper);font-family:"DM Sans",sans-serif}
+    a{color:inherit}
+    .custom-main{min-height:100vh;background:radial-gradient(circle at 87% 8%,rgba(255,84,0,.2),transparent 24%),#0b0b0b}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;padding:56px 0 90px}
+    .back{display:inline-flex;margin-bottom:38px;color:#aaa;text-decoration:none;font-weight:700}
+    .back:hover{color:var(--orange)}
+    .paid-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 24px;border:2px solid var(--yellow);border-radius:18px;background:var(--yellow);color:#111;margin-bottom:42px}
+    .paid-banner strong{font-family:"Archivo Black",sans-serif;font-size:clamp(1rem,2vw,1.35rem);text-transform:uppercase}
+    .paid-banner span{font-weight:700;text-align:right}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end;margin-bottom:70px}
+    .eyebrow{color:var(--orange);font-size:.8rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+    h1,h2,h3{font-family:"Oswald",sans-serif;text-transform:uppercase}
+    h1{font-size:clamp(4rem,9vw,8.8rem);line-height:.84;letter-spacing:-.035em;margin:15px 0 26px;font-weight:500}
+    .intro{max-width:720px;color:#bbb;font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.65;margin:0}
+    .fit-card{border:1px solid var(--line);border-radius:22px;padding:26px;background:rgba(23,21,19,.9)}
+    .fit-card h2{font-size:2rem;margin:0 0 14px}
+    .fit-card p{color:#aaa;line-height:1.6;margin:0}
+    .fit-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .fit-list span{border:1px solid #555;border-radius:999px;padding:8px 11px;font-size:.78rem;font-weight:800;text-transform:uppercase}
+    .section{margin-top:76px}
+    .section-kicker{color:var(--orange);font-size:.78rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+    .section h2{font-size:clamp(2.8rem,5.5vw,5.6rem);line-height:.92;margin:12px 0 34px;font-weight:500}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+    .step{position:relative;min-height:230px;padding:27px 22px;background:var(--surface);border-right:1px solid var(--line)}
+    .step:last-child{border-right:0}
+    .step:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:31px;z-index:2;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--orange);color:#111;font-weight:900}
+    .step-number{font-family:"Archivo Black",sans-serif;color:var(--orange);font-size:1.15rem}
+    .step h3{font-size:1.6rem;line-height:1.05;margin:36px 0 12px}
+    .step p{color:#aaa;font-size:.95rem;line-height:1.55;margin:0}
+    .library-link{color:var(--yellow);font-weight:800}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .price-card{position:relative;border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--surface)}
+    .price-card.recommended{background:var(--yellow);color:#111;border-color:var(--yellow);transform:translateY(-8px)}
+    .badge{display:inline-block;color:var(--orange);font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+    .recommended .badge{color:#6c2400}
+    .price-card h3{font-size:2.2rem;margin:8px 0 18px}
+    .rate{display:flex;align-items:baseline;gap:7px}
+    .rate strong{font-family:"Oswald",sans-serif;font-size:4.2rem;line-height:1}
+    .rate span{font-weight:700}
+    .child-rate{margin-top:9px;color:#aaa;font-weight:700}
+    .recommended .child-rate{color:#4a3f00}
+    .price-note{margin:22px 0 0;color:#aaa;line-height:1.6}
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .detail{border:1px solid var(--line);border-radius:20px;padding:25px}
+    .detail h3{font-size:1.7rem;margin:0 0 10px}
+    .detail p{color:#aaa;line-height:1.6;margin:0}
+    .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:38px}
+    .cta{display:inline-flex;align-items:center;gap:16px;border:3px solid var(--paper);border-radius:999px;padding:17px 23px;background:var(--orange);color:#111;text-decoration:none;font-weight:900;text-transform:uppercase;box-shadow:0 7px 0 #8f3000}
+    .cta-secondary{color:#bbb;font-weight:800}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.step{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.step:not(:last-child)::after{content:"↓";right:24px;top:auto;bottom:-13px}.step h3{margin-top:18px}.price-grid{grid-template-columns:1fr}.price-card.recommended{transform:none}.details{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1180px);padding-top:32px}.paid-banner{align-items:flex-start;flex-direction:column}.paid-banner span{text-align:left}h1{font-size:3.7rem}.section{margin-top:58px}.step{padding:23px 20px}.cta{width:100%;justify-content:center;text-align:center}}
+  </style>
+</head>
+<body>
+  <header class="subpage-bar"><a class="subpage-logo" href="index.html" aria-label="Return to Ralf's Game Club home"><img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club"></a></header>
+  <main class="custom-main">
+    <div class="wrap">
+      <a class="back" href="index.html#reserve-options" data-en="← Back to Ralf's" data-es="← Volver a Ralf's">← Back to Ralf's</a>
+
+      <div class="paid-banner">
+        <strong data-en="Paid custom hosting service" data-es="Servicio de eventos personalizados con costo">Paid custom hosting service</strong>
+        <span data-en="Planning, facilitation, and a dedicated Ralf's Game Host are included." data-es="Incluye planificación, facilitación y un anfitrión de juegos dedicado de Ralf's.">Planning, facilitation, and a dedicated Ralf's Game Host are included.</span>
+      </div>
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow" data-en="Designed around your group" data-es="Diseñado alrededor de tu grupo">Designed around your group</div>
+          <h1 data-en="Your event, hosted from idea to finale." data-es="Tu evento, guiado desde la idea hasta el final.">Your event, hosted from idea to finale.</h1>
+          <p class="intro" data-en="For birthdays, team gatherings, family celebrations, workshops, tournaments, and other private events. Tell us the people, occasion, and energy you want—Ralf's builds the plan and runs the experience." data-es="Para cumpleaños, encuentros de equipo, celebraciones familiares, talleres, torneos y otros eventos privados. Cuéntanos quiénes vienen, la ocasión y la energía que buscas; Ralf's crea el plan y dirige la experiencia.">For birthdays, team gatherings, family celebrations, workshops, tournaments, and other private events. Tell us the people, occasion, and energy you want—Ralf's builds the plan and runs the experience.</p>
+        </div>
+        <aside class="fit-card">
+          <h2 data-en="Made for more than birthdays" data-es="Creado para mucho más que cumpleaños">Made for more than birthdays</h2>
+          <p data-en="Every plan is shaped around your group rather than a fixed theme." data-es="Cada plan se adapta a tu grupo, no a un tema fijo.">Every plan is shaped around your group rather than a fixed theme.</p>
+          <div class="fit-list"><span>Birthdays</span><span>Team events</span><span>Family</span><span>Workshops</span><span>Tournaments</span><span>Private groups</span></div>
+        </aside>
+      </section>
+
+      <section class="section" id="process">
+        <div class="section-kicker" data-en="The custom event flow" data-es="El proceso del evento personalizado">The custom event flow</div>
+        <h2 data-en="Five clear steps. Ralf's handles the details." data-es="Cinco pasos claros. Ralf's se encarga de los detalles.">Five clear steps. Ralf's handles the details.</h2>
+        <div class="flow" aria-label="Custom event process">
+          <article class="step"><span class="step-number">01</span><h3 data-en="Tell us the idea" data-es="Cuéntanos la idea">Tell us the idea</h3><p data-en="Share your occasion, group, preferred date, and the kind of energy you want." data-es="Comparte la ocasión, el grupo, la fecha preferida y el ambiente que buscas.">Share your occasion, group, preferred date, and the kind of energy you want.</p></article>
+          <article class="step"><span class="step-number">02</span><h3 data-en="Choose the foundation" data-es="Elige la base">Choose the foundation</h3><p><span data-en="Select 2, 3, or 4 hours and explore available games in the" data-es="Elige 2, 3 o 4 horas y revisa los juegos disponibles en la">Select 2, 3, or 4 hours and explore available games in the</span> <a class="library-link" href="collections.html" data-en="Game Library →" data-es="Biblioteca de juegos →">Game Library →</a></p></article>
+          <article class="step"><span class="step-number">03</span><h3 data-en="Plan one-to-one" data-es="Planifica uno a uno">Plan one-to-one</h3><p data-en="A Ralf's team member confirms games, timing, setup, and your private package menu." data-es="Un miembro del equipo confirma los juegos, horarios, montaje y el menú privado de tu paquete.">A Ralf's team member confirms games, timing, setup, and your private package menu.</p></article>
+          <article class="step"><span class="step-number">04</span><h3 data-en="Approve and book" data-es="Aprueba y reserva">Approve and book</h3><p data-en="Review the custom plan and quote. A 50% deposit secures the date." data-es="Revisa el plan y la cotización. Un depósito del 50% asegura la fecha.">Review the custom plan and quote. A 50% deposit secures the date.</p></article>
+          <article class="step"><span class="step-number">05</span><h3 data-en="Show up and play" data-es="Llega y juega">Show up and play</h3><p data-en="Your Game Host teaches, facilitates, keeps the flow moving, and runs the finale." data-es="Tu anfitrión enseña, facilita, mantiene el ritmo y dirige el gran final.">Your Game Host teaches, facilitates, keeps the flow moving, and runs the finale.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="section-kicker" data-en="Hosted experience pricing" data-es="Precios de la experiencia guiada">Hosted experience pricing</div>
+        <h2 data-en="Choose your time." data-es="Elige tu duración.">Choose your time.</h2>
+        <div class="price-grid">
+          <article class="price-card"><span class="badge" data-en="2 hours" data-es="2 horas">2 hours</span><h3 data-en="Custom Hosted Event" data-es="Evento personalizado guiado">Custom Hosted Event</h3><div class="rate"><strong>$50</strong><span data-en="adult / teen 13+" data-es="adulto / adolescente 13+">adult / teen 13+</span></div><div class="child-rate">$45 · <span data-en="child 12 & under" data-es="niño de 12 años o menos">child 12 &amp; under</span></div></article>
+          <article class="price-card recommended"><span class="badge" data-en="3 hours · Recommended" data-es="3 horas · Recomendado">3 hours · Recommended</span><h3 data-en="Custom Hosted Event" data-es="Evento personalizado guiado">Custom Hosted Event</h3><div class="rate"><strong>$55</strong><span data-en="adult / teen 13+" data-es="adulto / adolescente 13+">adult / teen 13+</span></div><div class="child-rate">$50 · <span data-en="child 12 & under" data-es="niño de 12 años o menos">child 12 &amp; under</span></div></article>
+          <article class="price-card"><span class="badge" data-en="4 hours" data-es="4 horas">4 hours</span><h3 data-en="Custom Hosted Event" data-es="Evento personalizado guiado">Custom Hosted Event</h3><div class="rate"><strong>$60</strong><span data-en="adult / teen 13+" data-es="adulto / adolescente 13+">adult / teen 13+</span></div><div class="child-rate">$55 · <span data-en="child 12 & under" data-es="niño de 12 años o menos">child 12 &amp; under</span></div></article>
+        </div>
+        <p class="price-note" data-en="Pricing is per paid guest and includes custom planning plus a dedicated Game Host. Final availability, guest count, add-ons, and any special sourcing are confirmed in your one-to-one quote." data-es="El precio es por invitado pagado e incluye planificación personalizada y un anfitrión de juegos dedicado. La disponibilidad, cantidad final de invitados, extras y solicitudes especiales se confirman en tu cotización individual.">Pricing is per paid guest and includes custom planning plus a dedicated Game Host. Final availability, guest count, add-ons, and any special sourcing are confirmed in your one-to-one quote.</p>
+      </section>
+
+      <section class="section" id="details">
+        <div class="details">
+          <article class="detail"><h3 data-en="Games are easy to explore" data-es="Explorar los juegos es fácil">Games are easy to explore</h3><p><span data-en="Browse the public" data-es="Revisa la">Browse the public</span> <a class="library-link" href="collections.html" data-en="Game Library" data-es="Biblioteca de juegos">Game Library</a><span data-en=". Tell us your favorites or ask for recommendations during planning." data-es=". Dinos tus favoritos o pide recomendaciones durante la planificación.">. Tell us your favorites or ask for recommendations during planning.</span></p></article>
+          <article class="detail"><h3 data-en="Package menus stay private" data-es="Los menús del paquete son privados">Package menus stay private</h3><p data-en="Custom-event food options and the 21+ drink list are not the public café menu. Ralf's shares and confirms them directly with you during one-to-one planning." data-es="Las opciones de comida y la carta de bebidas para mayores de 21 años no son el menú público del café. Ralf's las comparte y confirma contigo durante la planificación individual.">Custom-event food options and the 21+ drink list are not the public café menu. Ralf's shares and confirms them directly with you during one-to-one planning.</p></article>
+        </div>
+        <div class="cta-row">
+          <a class="cta" href="availability.html?type=custom" data-en="Start a custom event request →" data-es="Iniciar una solicitud personalizada →">Start a custom event request →</a>
+          <a class="cta-secondary" href="reservations.html" data-en="Compare standard reservation packages" data-es="Comparar paquetes de reservación estándar">Compare standard reservation packages</a>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

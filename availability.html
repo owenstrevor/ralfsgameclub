@@ -1,48 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Check Availability — Ralf's Game Club</title>
-  <meta name="description" content="Check Ralf's Game Club event hours before requesting a reservation." />
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="subpage-brand.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    @font-face{font-family:OGC;src:url('assets/fonts/OldschoolGroteskCondensed.ttf')}*{box-sizing:border-box;margin:0;padding:0}:root{--o:#ff5400;--bg:#101010;--s:#181818;--t:#f2ede5;--b:#b0b0b0;--m:#898989;--line:#303030;--h:OGC,'Arial Narrow',sans-serif}body{background:var(--bg);color:var(--t);font-family:Inter,system-ui,sans-serif}.tab-bar{background:#1a1a1a;border-bottom:1px solid var(--line)}.tab-row{display:flex;justify-content:center;gap:clamp(.85rem,4vw,2.5rem);padding:0 1rem}.tab{border-bottom:2px solid transparent;color:var(--m);font-size:.8rem;font-weight:500;letter-spacing:.12em;padding:1rem .2rem;text-decoration:none;text-transform:uppercase;white-space:nowrap}.tab:hover{color:var(--t)}main{padding:clamp(3rem,7vw,5rem) 1.25rem 6rem}.wrap{width:min(100%,980px);margin:auto}.back{color:var(--m);font-size:.85rem;text-decoration:none}.back:hover{color:var(--o)}.head{display:grid;grid-template-columns:1fr 120px;gap:2rem;align-items:end;margin:3rem 0}.eyebrow{color:var(--o);font-size:.82rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.7rem}h1{font-family:var(--h);font-size:clamp(3.8rem,9vw,6.5rem);font-weight:400;line-height:.86;letter-spacing:.03em;text-transform:uppercase}.intro{max-width:650px;margin-top:1rem;color:var(--b);font-size:1rem;line-height:1.65}.head img{width:120px}.panel{padding:clamp(1.25rem,4vw,2rem);border:1px solid var(--line);border-radius:12px;background:var(--s)}.controls{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}.field{display:flex;flex-direction:column;gap:.5rem}.field label{color:var(--m);font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}.field input{min-height:46px;padding:.75rem 1rem;border:1px solid #444;border-radius:5px;background:#111;color:var(--t);font:inherit;color-scheme:dark}.legend{display:flex;gap:1rem;color:var(--m);font-size:.8rem}.legend span:before{content:'';display:inline-block;width:9px;height:9px;margin-right:.4rem;border-radius:50%;background:var(--o)}.legend .open:before{background:#f2ede5}.day-title{padding:1rem 0;border-block:1px solid var(--line);font-family:var(--h);font-size:2rem;letter-spacing:.05em;text-transform:uppercase}.hours{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;padding-top:1rem}.slot{padding:.9rem;border:1px solid #444;border-radius:6px;background:#111;color:var(--t);font-size:.9rem;text-align:center}.slot.booked{border-color:#7a3519;background:#2a1710;color:#ff9c70}.slot.closed{border-style:dashed;color:#666}.status{margin-top:1rem;color:var(--b);font-size:.9rem;line-height:1.6}.next{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:1rem;padding:1.2rem;border:1px solid var(--line);border-radius:8px}.next strong{display:block}.next span{color:var(--m);font-size:.85rem}.request{display:inline-flex;gap:1rem;padding:.9rem 1rem;border-radius:5px;background:var(--o);color:#111;font-weight:600;text-decoration:none;white-space:nowrap}.calendar-link{display:inline-block;margin-top:1.5rem;color:var(--o);font-size:.9rem;text-decoration:none}.calendar-link:hover{text-decoration:underline}@media(max-width:700px){.tab-row{justify-content:flex-start;overflow-x:auto}.head{grid-template-columns:1fr}.head img{width:90px;grid-row:1}.controls{align-items:flex-start;flex-direction:column}.hours{grid-template-columns:repeat(2,1fr)}.next{align-items:flex-start;flex-direction:column}.request{width:100%;justify-content:space-between}}
-    .schedule-layout{display:grid;grid-template-columns:260px 1fr;gap:1.5rem;align-items:start}.mini-calendar{padding:1rem;border:1px solid var(--line);border-radius:8px;background:#111}.month-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}.month-title{font-weight:600}.month-nav{width:34px;height:34px;border:1px solid #444;border-radius:50%;background:transparent;color:var(--t);font-size:1rem;cursor:pointer}.weekdays,.month-days{display:grid;grid-template-columns:repeat(7,1fr);gap:.2rem}.weekdays span{padding:.35rem 0;color:var(--m);font-size:.68rem;text-align:center;text-transform:uppercase}.calendar-day{aspect-ratio:1;border:0;border-radius:50%;background:transparent;color:var(--b);font:inherit;font-size:.78rem;cursor:pointer}.calendar-day:hover{background:#292929;color:var(--t)}.calendar-day.selected{background:var(--o);color:#111;font-weight:600}.calendar-day.outside{color:#555}.google-calendar{display:flex;justify-content:center;margin-top:1rem;padding:.75rem;border:1px solid #444;border-radius:5px;color:var(--t);font-size:.78rem;font-weight:600;text-decoration:none}.google-calendar:hover{border-color:var(--o);color:var(--o)}.schedule-main{min-width:0}.view-options{display:flex;gap:.45rem}.view-option{padding:.65rem .8rem;border:1px solid #444;border-radius:5px;background:#111;color:var(--m);font:inherit;font-size:.85rem}.view-option.active{border-color:var(--o);color:var(--t)}.legend{flex-wrap:wrap;margin-bottom:1rem}.legend span:before{background:#f2ede5}.legend .partial:before{background:#f4a261}.legend .full:before{background:var(--o)}.capacity{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;color:var(--b);font-size:.9rem}.capacity strong{color:var(--t)}.hours{grid-template-columns:1fr;padding-top:0}.slot{display:grid;grid-template-columns:150px 1fr;align-items:center;text-align:left}.slot strong,.slot small{display:block}.slot small{margin-top:0;color:var(--m)}.slot.partial{border-color:#8d5a2c;background:#2a2015;color:#ffd0a1}.slot.full{border-color:#8f3513;background:#32180e;color:#ff9c70}@media(max-width:760px){.schedule-layout{grid-template-columns:1fr}.mini-calendar{max-width:360px}.capacity{flex-direction:column}.slot{grid-template-columns:1fr}.slot small{margin-top:.25rem}}
-    .schedule-layout{display:block}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Request a Reservation — Ralf's Game Club</title>
+  <meta name="description" content="Choose a date, time, group size, and reservation type for Ralf's Game Club.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="subpage-brand.css">
   <link rel="stylesheet" href="site-header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
   <script src="site-header.js" defer></script>
+  <style>
+    :root{--orange:#ff5400;--ink:#0b0b0b;--paper:#f5f2eb;--muted:#aaa5a0;--line:rgba(255,255,255,.24)}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 82% 16%,rgba(255,84,0,.17),transparent 27%),#090909;color:#fff;font-family:"DM Sans",sans-serif;min-height:100vh}
+    .booking-page{min-height:calc(100vh - 120px);display:grid;place-items:center;padding:42px 18px 70px}
+    .booking-dialog{width:min(1120px,100%);border:1px solid rgba(255,255,255,.28);border-radius:24px;background:rgba(18,16,15,.86);box-shadow:0 28px 90px rgba(0,0,0,.72);backdrop-filter:blur(22px);overflow:hidden}
+    .dialog-inner{padding:clamp(22px,4vw,34px)}
+    .dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+    .section-label{color:var(--orange);font-size:.78rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+    h1{font-family:"Oswald",sans-serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:500;line-height:.9;text-transform:uppercase;margin:9px 0 10px}
+    .dialog-head p{margin:0;color:#aaa;line-height:1.55}
+    .dialog-close{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #555;border-radius:50%;background:#161616;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:800}
+    .booking-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;align-items:start}
+    .booking-stage{min-width:0}
+    .booking-step{display:flex;gap:8px;align-items:center;color:#aaa;font-size:.74rem;font-weight:800;text-transform:uppercase;margin-bottom:16px}
+    .booking-step span{display:grid;place-items:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--orange);color:#111}
+    .calendar-fields{display:grid;gap:12px;margin-bottom:12px}
+    .calendar-field{display:grid;gap:8px}
+    .calendar-field label{color:#aaa;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .calendar-field input,.calendar-field select{width:100%;min-height:52px;border:1px solid #555;border-radius:10px;background:#101010;color:#fff;padding:11px 13px;font:inherit;color-scheme:dark}
+    .calendar-field input[readonly]{color:var(--orange);font-weight:900}
+    .reservation-type select{border-color:var(--orange)}
+    .number-control{display:grid;grid-template-columns:42px 1fr 42px}
+    .number-control input{border-radius:0;text-align:center}
+    .number-control button{border:1px solid #555;background:#181818;color:#fff;font-size:1.25rem;cursor:pointer}
+    .number-control button:first-child{border-radius:10px 0 0 10px}.number-control button:last-child{border-radius:0 10px 10px 0}
+    .availability-result{border:1px solid #48423f;border-radius:12px;padding:14px;color:#d5d0ca;background:#ffffff08;margin-bottom:12px;line-height:1.5}
+    .capacity-guide{padding:13px;border-radius:12px;background:#ffffff09;color:#aaa;font-size:.82rem;line-height:1.55}
+    .reservation-summary{padding:17px;border:1px solid #48423f;border-radius:14px;background:#fff;color:#111}
+    .reservation-summary h2{margin:0 0 14px;font-size:1rem}
+    .summary-list{display:grid;gap:11px;margin-bottom:16px}
+    .summary-list div{display:grid;grid-template-columns:24px 1fr;gap:8px}
+    .summary-list span{font-size:1rem}.summary-list strong{font-size:.82rem;line-height:1.4}
+    .continue-link{display:flex;width:100%;align-items:center;justify-content:center;min-height:46px;border:0;border-radius:9px;padding:10px 15px;background:var(--orange);color:#111;font:inherit;font-weight:800;cursor:pointer}
+    .continue-link.disabled{opacity:.45;pointer-events:none}
+    .booking-note{display:block;margin-top:9px;color:#666;font-size:.7rem;line-height:1.4;text-align:center}
+    .custom-note{display:none;margin-top:10px;padding:11px;border:1px solid #ff540080;border-radius:10px;color:#ddd;font-size:.78rem;line-height:1.5;background:#ff540012}
+    .custom-note.visible{display:block}
+    @media(max-width:850px){.booking-layout{grid-template-columns:1fr}.calendar-fields{grid-template-columns:1fr 1fr}.booking-step{margin-top:8px}}
+    @media(max-width:520px){.booking-page{padding:18px 10px 42px}.booking-dialog{border-radius:18px}.dialog-inner{padding:20px}.dialog-head{gap:12px}.calendar-fields{grid-template-columns:1fr}h1{font-size:2.8rem}}
+  </style>
 </head>
 <body>
   <header class="subpage-bar"><a class="subpage-logo" href="index.html" aria-label="Return to Ralf's Game Club home"><img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club"></a></header>
-  <main><div class="wrap">
-    <a class="back" href="reservations.html">← Reservation packages</a>
-    <header class="head"><div><p class="eyebrow">Ralf's reservation calendar</p><h1>Find Your<br />Open Hours</h1><p class="intro">Choose a date to see Ralf's regular hours and scheduled community events. Open hours are not a confirmed reservation until our team replies.</p></div><img src="assets/images/Ralfs Game Club Logo.svg" alt="Ralf's Game Club" /></header>
-    <section class="panel" aria-labelledby="schedule-title">
-      <div class="controls"><div class="field"><label for="date">Choose a date</label><input id="date" type="date" min="2026-09-13" value="2026-09-23" /></div><div class="field"><span id="view-label">View</span><div class="view-options" aria-labelledby="view-label"><button class="view-option" id="day-view" aria-pressed="false">Day</button><button class="view-option active" id="hours-view" aria-pressed="true">Hours</button></div></div></div>
-      <div class="legend"><span>All 8 tables open</span><span class="partial">Some tables open</span><span class="full">Full</span></div>
-      <div class="schedule-layout"><div class="schedule-main">
-      <h2 class="day-title" id="schedule-title">Wednesday, September 23</h2>
-      <div class="capacity"><span><strong>8 tables total</strong> · whole-hour availability</span><span id="summary"></span></div>
-      <div class="hours" id="hours" aria-live="polite"></div>
-      <p class="status" id="status"></p></div></div>
-      <div class="next"><div><strong>Found an open time?</strong><span>Include your date, time, group size, package, and event type.</span></div><a class="request" id="request" href="#"><span>Request This Time</span><span aria-hidden="true">→</span></a></div>
-      <a class="calendar-link" href="events.html">View all community events →</a>
+  <main class="booking-page" id="top">
+    <section class="booking-dialog" role="dialog" aria-modal="false" aria-labelledby="booking-title">
+      <div class="dialog-inner">
+        <div class="dialog-head">
+          <div><div class="section-label" data-en="Ralf's calendar" data-es="Calendario de Ralf's">Ralf's calendar</div><h1 id="booking-title" data-en="Check your group" data-es="Revisa tu grupo">Check your group</h1><p data-en="Choose a reservation type, date, hour, and group size. We will calculate the tables your group needs." data-es="Elige el tipo de reservación, la fecha, la hora y el tamaño del grupo. Calcularemos las mesas necesarias.">Choose a reservation type, date, hour, and group size. We will calculate the tables your group needs.</p></div>
+          <a class="dialog-close" id="dialog-close" href="index.html" aria-label="Close reservation">×</a>
+        </div>
+
+        <div class="booking-layout">
+          <section class="booking-stage" aria-labelledby="step-date-time">
+            <div class="booking-step" id="step-date-time"><span>1</span><b data-en="Select reservation, date & time" data-es="Elige reservación, fecha y hora">Select reservation, date &amp; time</b></div>
+            <div class="calendar-fields">
+              <div class="calendar-field reservation-type"><label for="quick-type" data-en="Reservation type" data-es="Tipo de reservación">Reservation type</label><select id="quick-type"><option value="standard">Standard reservation</option><option value="custom">Custom hosted event</option></select></div>
+              <div class="calendar-field"><label for="quick-date" data-en="Date" data-es="Fecha">Date</label><input id="quick-date" type="date"></div>
+              <div class="calendar-field"><label for="quick-duration" data-en="Package length" data-es="Duración del paquete">Package length</label><select id="quick-duration"><option value="2">2 hours</option><option value="3">3 hours</option><option value="4">4 hours</option></select></div>
+              <div class="calendar-field"><label for="quick-hour" data-en="Start time" data-es="Hora de inicio">Start time</label><select id="quick-hour"></select></div>
+              <div class="calendar-field"><label for="quick-end" data-en="End time" data-es="Hora de finalización">End time</label><input id="quick-end" type="text" value="3 PM" readonly aria-live="polite"></div>
+            </div>
+            <div class="custom-note" id="custom-note" data-en="Custom hosted events include one-to-one planning and a dedicated Game Host. Final details and pricing are confirmed directly with Ralf's." data-es="Los eventos personalizados incluyen planificación individual y un anfitrión de juegos dedicado. Los detalles y el precio final se confirman directamente con Ralf's.">Custom hosted events include one-to-one planning and a dedicated Game Host. Final details and pricing are confirmed directly with Ralf's.</div>
+          </section>
+
+          <section class="booking-stage" aria-labelledby="step-group">
+            <div class="booking-step" id="step-group"><span>2</span><b data-en="Check your group" data-es="Revisa tu grupo">Check your group</b></div>
+            <div class="calendar-fields">
+              <div class="calendar-field"><label for="quick-guests" data-en="Guests" data-es="Invitados">Guests</label><div class="number-control"><button type="button" aria-label="Remove one guest" id="guest-minus">−</button><input id="quick-guests" type="number" min="1" max="100" value="6" inputmode="numeric"><button type="button" aria-label="Add one guest" id="guest-plus">+</button></div></div>
+              <div class="calendar-field"><label for="quick-tables" data-en="Tables" data-es="Mesas">Tables</label><input id="quick-tables" type="text" value="1" readonly aria-live="polite"></div>
+            </div>
+            <div class="availability-result" id="availability-result" data-en="Choose a date and hour to plan your visit." data-es="Elige una fecha y hora para planificar tu visita.">Choose a date and hour to plan your visit.</div>
+            <div class="capacity-guide" data-en="Table guide: 1 table for up to 6 guests · 2 for 7–12 · 3 for 13–18 · 4 for 19–23 · 24+ is private." data-es="Guía de mesas: 1 mesa hasta 6 invitados · 2 para 7–12 · 3 para 13–18 · 4 para 19–23 · 24+ es privado.">Table guide: 1 table for up to 6 guests · 2 for 7–12 · 3 for 13–18 · 4 for 19–23 · 24+ is private.</div>
+          </section>
+
+          <section class="booking-stage" aria-labelledby="step-confirm">
+            <div class="booking-step" id="step-confirm"><span>3</span><b data-en="Confirm & book" data-es="Confirma y reserva">Confirm &amp; book</b></div>
+            <aside class="reservation-summary" aria-label="Reservation summary">
+              <h2 data-en="Your reservation plan" data-es="Tu plan de reservación">Your reservation plan</h2>
+              <div class="summary-list">
+                <div><span>★</span><strong id="summary-type">Standard reservation</strong></div>
+                <div><span>▣</span><strong id="summary-date">Choose a date</strong></div>
+                <div><span>◷</span><strong id="summary-time">Choose a time</strong></div>
+                <div><span>♟</span><strong id="summary-group">6 guests · 1 table</strong></div>
+                <div><span>⌖</span><strong>Ralf's Game Club<br>407 C. del Parque, Santurce, PR</strong></div>
+              </div>
+              <button class="continue-link disabled" id="continue-link" type="button" aria-disabled="true" data-en="Send reservation request →" data-es="Enviar solicitud de reservación →">Send reservation request →</button>
+              <small class="booking-note" data-en="Opens a Gmail draft with the reservation details filled in." data-es="Abre un borrador de Gmail con los detalles ya completados.">Opens a Gmail draft with the reservation details filled in.</small>
+            </aside>
+          </section>
+        </div>
+      </div>
     </section>
-  </div></main>
+  </main>
   <script>
-    const datedBookings={"2026-09-23":[[19,21,8,"BitDevs San Juan Meetup"]],"2026-10-01":[[14,21,8,"Board Game BAZAAR"]]};
-    const dateInput=document.querySelector('#date'),hours=document.querySelector('#hours'),title=document.querySelector('#schedule-title'),status=document.querySelector('#status'),summary=document.querySelector('#summary'),request=document.querySelector('#request');
-    function label(h){const whole=Math.floor(h),p=whole>=12?'PM':'AM',n=whole%12||12,minutes=h%1?'30':'00';return `${n}:${minutes} ${p}`}
-    function render(){const value=dateInput.value,d=new Date(`${value}T12:00:00`),day=d.getDay();title.textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});hours.innerHTML='';const open=day===0?[13,18]:day>=3&&day<=6?[13,21.5]:[0,0],dayBookings=[...(datedBookings[value]||[])];if(day===0)dayBookings.push([15,17.5,2,'World Language Table']);let availableSlots=0;for(let h=10;h<22;h+=1){const inHours=h>=open[0]&&h<open[1],slotEnd=inHours?Math.min(h+1,open[1]):h+1,active=dayBookings.filter(b=>h>=b[0]&&h<b[1]),used=Math.min(8,active.reduce((n,b)=>n+b[2],0)),left=inHours?8-used:0,slot=document.createElement('div');slot.className='slot'+(!inHours?' closed':left===0?' full':left<8?' partial':'');slot.innerHTML=`<strong>${label(h)}–${label(slotEnd)}</strong><small>${!inHours?'Closed':left===0?'Full · 0 tables open':`${left} of 8 tables open${active.length?` · ${active.map(b=>b[3]).join(', ')}`:''}`}</small>`;slot.title=active.length?active.map(b=>`${b[3]} uses ${b[2]} table${b[2]===1?'':'s'}`).join('; '):inHours?'All tables available':'Outside regular hours';if(left>0)availableSlots++;hours.append(slot)}summary.textContent=availableSlots?`${availableSlots} open time slots`:'No open hours';status.textContent=dayBookings.length?`Scheduled: ${dayBookings.map(b=>`${b[3]} · ${label(b[0])}–${label(b[1])} · ${b[2]} table${b[2]===1?'':'s'} used`).join('; ')}.`:'No community events are currently listed for this date.';const body=`Preferred date: ${value}\nPreferred time:\nNumber of tables needed:\nGroup size:\nPackage (2, 3, or 4 hours):\nEvent type:\nTell us about your event:`;request.href=`mailto:ralfsgameclub@gmail.com?subject=${encodeURIComponent("Event reservation at Ralf's Game Club")}&body=${encodeURIComponent(body)}`}
-    const dayView=document.querySelector('#day-view'),hoursView=document.querySelector('#hours-view');
-    dayView.addEventListener('click',()=>{hours.hidden=true;dayView.classList.add('active');hoursView.classList.remove('active');dayView.setAttribute('aria-pressed','true');hoursView.setAttribute('aria-pressed','false')});
-    hoursView.addEventListener('click',()=>{hours.hidden=false;hoursView.classList.add('active');dayView.classList.remove('active');hoursView.setAttribute('aria-pressed','true');dayView.setAttribute('aria-pressed','false')});
-    dateInput.addEventListener('change',render);render();
+    const quickType=document.getElementById('quick-type');
+    const quickDate=document.getElementById('quick-date');
+    const quickHour=document.getElementById('quick-hour');
+    const quickDuration=document.getElementById('quick-duration');
+    const quickEnd=document.getElementById('quick-end');
+    const quickGuests=document.getElementById('quick-guests');
+    const quickTables=document.getElementById('quick-tables');
+    const availabilityResult=document.getElementById('availability-result');
+    const summaryType=document.getElementById('summary-type');
+    const summaryDate=document.getElementById('summary-date');
+    const summaryTime=document.getElementById('summary-time');
+    const summaryGroup=document.getElementById('summary-group');
+    const customNote=document.getElementById('custom-note');
+    const bookingLink=document.getElementById('continue-link');
+    const availabilityApi='https://script.google.com/macros/s/AKfycbzuxjExNhPusNXr1XhOn-TuMr5OQ-beWXlYhAs8ggn_Tgo7zxfXGiIK9_2Sqgs56HC4dw/exec';
+    let availabilityRequest=0;
+
+    for(let hour=13;hour<=21;hour++){
+      const option=document.createElement('option');
+      option.value=hour;
+      option.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'});
+      quickHour.appendChild(option);
+    }
+
+    function syncEndTime(){
+      quickEnd.value=new Date(2000,0,1,Number(quickHour.value)+Number(quickDuration.value)).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+    }
+
+    function changeGuests(amount){
+      quickGuests.value=Math.min(100,Math.max(1,(Number(quickGuests.value)||1)+amount));
+      updateAvailability();
+    }
+
+    function syncType(){
+      const custom=quickType.value==='custom';
+      summaryType.textContent=custom?'Custom hosted event':'Standard reservation';
+      customNote.classList.toggle('visible',custom);
+      updateAvailability();
+    }
+
+    async function updateAvailability(){
+      const request=++availabilityRequest;
+      const guests=Math.max(1,Number(quickGuests.value)||1);
+      const duration=Number(quickDuration.value);
+      const tablesNeeded=Math.ceil(guests/6);
+      const isPrivate=guests>=24;
+      quickTables.value=isPrivate?'PRIVATE':tablesNeeded;
+      summaryGroup.textContent=guests+' guests · '+(isPrivate?'private venue':tablesNeeded+' table'+(tablesNeeded>1?'s':''));
+      if(!quickDate.value)return;
+
+      const selectedDate=new Date(quickDate.value+'T12:00:00');
+      const day=selectedDate.getDay();
+      const hour=Number(quickHour.value);
+      const isSunday=day===0;
+      const closeHour=isSunday?18:21.5;
+      const isOpen=isSunday?(hour>=13&&hour+duration<=closeHour):(day>=3&&day<=6&&hour>=13&&hour+duration<=closeHour);
+      summaryDate.textContent=selectedDate.toLocaleDateString([], {weekday:'long',month:'long',day:'numeric',year:'numeric'});
+      summaryTime.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'})+' – '+new Date(2000,0,1,hour+duration).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})+' ('+duration+' hours)';
+      bookingLink.classList.add('disabled');
+      bookingLink.setAttribute('aria-disabled','true');
+
+      if(!isOpen){
+        availabilityResult.textContent=isSunday?'This package must fit within Sunday hours, 1 PM–6 PM.':'This package must fit within Wednesday–Saturday hours, 1 PM–9:30 PM.';
+        return;
+      }
+
+      availabilityResult.textContent='Checking Ralf’s live calendar…';
+      try{
+        const response=await fetch(availabilityApi+'?date='+encodeURIComponent(quickDate.value));
+        const data=await response.json();
+        if(request!==availabilityRequest)return;
+        if(!response.ok||!data.ok)throw new Error('Calendar unavailable');
+        const start=new Date(quickDate.value+'T'+String(hour).padStart(2,'0')+':00:00-04:00');
+        const end=new Date(start.getTime()+duration*60*60*1000);
+        const overlapping=(data.busy||[]).filter(item=>new Date(item.start)<end&&new Date(item.end)>start);
+        const hasPrivate=overlapping.some(item=>item.private);
+        const reservedTables=hasPrivate?8:overlapping.reduce((sum,item)=>sum+(Number(item.tables)||0),0);
+        const openTables=Math.max(0,8-reservedTables);
+        if(hasPrivate){availabilityResult.textContent='This time is unavailable because Ralf’s is reserved for a private event.';return}
+        if(isPrivate&&reservedTables>0){availabilityResult.textContent='A private event needs the whole venue, but this time already has another reservation.';return}
+        if(!isPrivate&&tablesNeeded>openTables){availabilityResult.textContent='Only '+openTables+' of 8 tables are open at this time. Your group needs '+tablesNeeded+'. Please choose another time.';return}
+        bookingLink.classList.remove('disabled');
+        bookingLink.removeAttribute('aria-disabled');
+        availabilityResult.textContent=isPrivate?guests+' guests · The whole venue is currently open for a private event.':guests+' guests · '+tablesNeeded+' table'+(tablesNeeded>1?'s':'')+' needed · '+openTables+' of 8 tables currently open · '+(openTables-tablesNeeded)+' would remain after booking.';
+      }catch(error){
+        if(request!==availabilityRequest)return;
+        availabilityResult.textContent='We could not confirm the live calendar. You can still send a request and Ralf’s will confirm the time.';
+        bookingLink.classList.remove('disabled');
+        bookingLink.removeAttribute('aria-disabled');
+      }
+    }
+
+    bookingLink.addEventListener('click',()=>{
+      if(bookingLink.classList.contains('disabled'))return;
+      const type=quickType.value==='custom'?'Custom hosted event':'Standard reservation';
+      const subject=type+' request — '+quickDate.value;
+      const body=[type+' request for Ralf\'s Game Club','','Date: '+summaryDate.textContent,'Time: '+summaryTime.textContent,'Group: '+summaryGroup.textContent,'Tables: '+quickTables.value,'','Tell us about your event:','','Please reply to confirm availability and next steps.'].join('\n');
+      window.open('https://mail.google.com/mail/?view=cm&fs=1&to=ralfsgameclub@gmail.com&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body),'_blank','noopener');
+    });
+
+    document.getElementById('guest-minus').addEventListener('click',()=>changeGuests(-1));
+    document.getElementById('guest-plus').addEventListener('click',()=>changeGuests(1));
+    quickType.addEventListener('change',syncType);
+    quickDate.addEventListener('change',updateAvailability);
+    quickHour.addEventListener('change',()=>{syncEndTime();updateAvailability()});
+    quickDuration.addEventListener('change',()=>{syncEndTime();updateAvailability()});
+    quickGuests.addEventListener('input',updateAvailability);
+
+    const params=new URLSearchParams(location.search);
+    if(params.get('type')==='custom'){
+      quickType.value='custom';
+      document.getElementById('dialog-close').href='custom-events.html';
+    }
+    const today=new Date();
+    quickDate.min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+    syncEndTime();
+    syncType();
   </script>
-</body></html>
+</body>
+</html>
