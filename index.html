@@ -104,7 +104,7 @@
     const bookingLink=document.querySelector('.continue-link');bookingLink.addEventListener('click',event=>{if(bookingLink.classList.contains('disabled'))event.preventDefault()});
     const availabilityApi='https://script.google.com/macros/s/AKfycbzuxjExNhPusNXr1XhOn-TuMr5OQ-beWXlYhAs8ggn_Tgo7zxfXGiIK9_2Sqgs56HC4dw/exec';
     let availabilityRequest=0;
-    for(let hour=10;hour<=22;hour++){const option=document.createElement('option');option.value=hour;option.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'});quickHour.appendChild(option)}
+    for(let hour=13;hour<=21;hour++){const option=document.createElement('option');option.value=hour;option.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'});quickHour.appendChild(option)}
     function syncEndTime(){quickEnd.value=new Date(2000,0,1,Number(quickHour.value)+Number(quickDuration.value)).toLocaleTimeString([], {hour:'numeric'})}
     function openAvailability(event){event.preventDefault();if(!quickDate.value){const today=new Date();quickDate.value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-')}updateAvailability();document.getElementById('availability-dialog').showModal()}
     function changeGuests(amount){quickGuests.value=Math.min(100,Math.max(1,(Number(quickGuests.value)||1)+amount));updateAvailability()}
