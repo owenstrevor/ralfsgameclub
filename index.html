@@ -17,6 +17,14 @@
     @media(max-width:1100px){.nav{height:auto;min-height:76px;flex-wrap:wrap;padding-top:8px;padding-bottom:9px}.nav-links,.menu-toggle{display:none!important}.nav-actions{margin-left:auto}.mobile-direct{order:4;width:100%;display:flex;gap:7px;overflow-x:auto;padding:5px 0 1px;scrollbar-width:none}.mobile-direct::-webkit-scrollbar{display:none}.mobile-direct a{flex:0 0 auto;border:1.5px solid #111;border-radius:999px;padding:8px 11px;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.02em;background:#fff}.mobile-direct a:hover{background:var(--orange)}.language-select{font-size:.72rem;padding:8px}.nav-actions .top-cta:not(.orange){display:none}}
     @media(max-width:760px){.nav-actions{gap:7px}.mobile-direct a{font-size:.66rem}.language-select{max-width:92px}.nav-actions .top-cta.orange{display:block}}
   </style>
+  <style>
+    .availability-dialog{width:min(620px,calc(100% - 28px));border:1px solid rgba(255,255,255,.28);border-radius:24px;padding:0;background:rgba(18,16,15,.88);color:#fff;box-shadow:0 28px 90px #000b;backdrop-filter:blur(22px)}
+    .availability-dialog::backdrop{background:rgba(0,0,0,.58);backdrop-filter:blur(4px)}
+    .calendar-modal{padding:28px}.calendar-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.calendar-modal h2{font-size:clamp(2.2rem,7vw,4rem);margin:7px 0 8px}.calendar-modal p{color:#aaa;margin:0;line-height:1.5}
+    .dialog-close{border:1px solid #555;border-radius:50%;width:42px;height:42px;background:#161616;color:#fff;font-size:1.3rem;cursor:pointer}.calendar-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 18px}.calendar-field{display:grid;gap:8px}.calendar-field label{color:#aaa;font-size:.75rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.calendar-field input,.calendar-field select{width:100%;min-height:52px;border:1px solid #555;border-radius:10px;background:#101010;color:#fff;padding:11px 13px;font:inherit;color-scheme:dark}
+    .availability-result{border:1px solid #48423f;border-radius:12px;padding:14px;color:#d5d0ca;background:#ffffff08;margin-bottom:16px}.calendar-actions{display:flex;flex-wrap:wrap;gap:10px}.calendar-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid #555;border-radius:10px;padding:10px 15px;font-weight:800}.calendar-actions .google-link{background:#fff;color:#111}.calendar-actions .continue-link{background:var(--orange);color:#111;border-color:var(--orange)}
+    @media(max-width:560px){.calendar-fields{grid-template-columns:1fr}.calendar-actions a{width:100%}}
+  </style>
 </head>
 <body>
   <div class="announcement" id="announcement">Now booking <strong>birthdays · private events · group play</strong> in San Juan<button aria-label="Close announcement" onclick="document.getElementById('announcement').remove()">×</button></div>
@@ -34,10 +42,27 @@
     <nav class="mobile-direct" aria-label="Quick links"><a href="collections.html">Play &amp; Visit</a><a href="events.html">Events</a><a href="menu.html">Food &amp; Drinks</a><a href="after-school.html">After School Program</a><a href="chess.html">Chess Program</a></nav>
   </header>
   <main id="top">
-    <section class="hero"><div class="hero-copy"><div class="eyebrow">Bring your own event to Ralf's</div><h1>Not another <span class="accent">boring party</span></h1><div class="hero-bottom"><p class="hero-description">Games, big-screen moments, and room for your people. <strong>You bring the occasion—we'll help make it memorable.</strong></p><div class="hero-actions"><a class="cta" href="reservations.html"><span class="cta-plus">+</span>Get reservation now<span class="cta-arrow">→</span></a><a class="calendar-link" href="availability.html"><span class="calendar-icon">▦</span><span><strong>View available hours</strong><small>Check the event calendar first, then choose an open date and time for your gathering.</small></span></a></div></div></div><div class="service-strip" aria-label="Explore Ralf's"><a href="#play"><span>🎲</span>Open Play</a><a href="events.html"><span>♟️</span>Weekly Meetups</a><a href="after-school.html"><span>📚</span>After School</a><a href="reservations.html"><span>🎉</span>Private Events</a><a href="#menu"><span>☕</span>Food & Coffee</a></div></section>
+    <section class="hero"><div class="hero-copy"><div class="eyebrow">Bring your own event to Ralf's</div><h1>Not another <span class="accent">boring party</span></h1><div class="hero-bottom"><p class="hero-description">Games, big-screen moments, and room for your people. <strong>You bring the occasion—we'll help make it memorable.</strong></p><div class="hero-actions"><a class="cta" href="reservations.html"><span class="cta-plus">+</span>Get reservation now<span class="cta-arrow">→</span></a><a class="calendar-link" href="#availability" onclick="openAvailability(event)"><span class="calendar-icon">▦</span><span><strong>View available hours</strong><small>Check a date and time without leaving this page.</small></span></a></div></div></div><div class="service-strip" aria-label="Explore Ralf's"><a href="#play"><span>🎲</span>Open Play</a><a href="events.html"><span>♟️</span>Weekly Meetups</a><a href="after-school.html"><span>📚</span>After School</a><a href="reservations.html"><span>🎉</span>Private Events</a><a href="#menu"><span>☕</span>Food & Coffee</a></div></section>
     <section class="choose" id="play"><div class="section-label">One club. Many ways to belong.</div><h2>Choose your way in.</h2><div class="cards"><article class="card"><span class="card-number">01 / COMMUNITY</span><div><h3>Come play</h3><p>Drop in for open play or join weekly chess, board game, language, and community-led sessions.</p><a class="card-link" href="community.html">See what's happening →</a></div></article><article class="card"><span class="card-number">02 / CELEBRATE</span><div><h3>Book your people</h3><p>Birthday, team night, family gathering, or your own big idea. Choose tables, the Movie Room, or the whole venue.</p><a class="card-link" href="reservations.html">Build your reservation →</a></div></article><article class="card"><span class="card-number">03 / GROW</span><div><h3>Learn after school</h3><p>Homework support, chess, literature, games, and creative activities for ages 8–16.</p><a class="card-link" href="after-school.html">Explore the program →</a></div></article></div></section>
-    <section id="reserve-options"><div><div class="section-label">Reservation preview</div><h2>Make it yours.</h2><p>Start with the kind of experience you want. Ralf's can help shape the room, play setup, and timing around your group.</p><a class="cta" href="reservations.html"><span class="cta-plus">+</span>Start reservation<span class="cta-arrow">→</span></a></div><div class="reserve-panel" id="spaces"><div class="reserve-option">Reserved Game Party <span>Tables + play →</span></div><div class="reserve-option">Private Movie Room <span>Big screen →</span></div><div class="reserve-option">Whole Venue Event <span>Your crowd →</span></div></div></section>
+    <section id="reserve-options"><div><div class="section-label">One more way to celebrate</div><h2>What if Ralf's designed and ran the whole party?</h2><p>This is a one-to-one custom event service for your group. Tell us your people, occasion, and idea—Ralf's will help design the experience, organize the space, and run the event with you.</p><a class="cta" href="reservations.html"><span class="cta-plus">+</span>Plan my custom event<span class="cta-arrow">→</span></a></div><div class="reserve-panel" id="spaces"><div class="reserve-option">One-to-one planning <span>Your idea →</span></div><div class="reserve-option">Custom space &amp; activities <span>Designed for you →</span></div><div class="reserve-option">Hosted by Ralf's <span>We run the party →</span></div></div></section>
   </main>
+  <dialog class="availability-dialog" id="availability-dialog">
+    <div class="calendar-modal">
+      <div class="calendar-modal-head">
+        <div><div class="section-label">Ralf's calendar</div><h2>Check a date &amp; hour</h2><p>A quick calendar view for planning your visit or private event.</p></div>
+        <button class="dialog-close" type="button" aria-label="Close calendar" onclick="document.getElementById('availability-dialog').close()">×</button>
+      </div>
+      <div class="calendar-fields">
+        <div class="calendar-field"><label for="quick-date">Date</label><input id="quick-date" type="date"></div>
+        <div class="calendar-field"><label for="quick-hour">Hour</label><select id="quick-hour"></select></div>
+      </div>
+      <div class="availability-result" id="availability-result">Choose a date and hour to plan your visit.</div>
+      <div class="calendar-actions">
+        <a class="google-link" href="https://calendar.google.com/calendar/u/0/r/week" target="_blank" rel="noopener">Open Ralf's Google Calendar ↗</a>
+        <a class="continue-link" href="reservations.html">Continue to reservation →</a>
+      </div>
+    </div>
+  </dialog>
   <footer id="visit"><span>Ralf's Game Club · Santurce, San Juan, Puerto Rico</span><span id="menu">Play · Meet · Eat · Celebrate</span></footer>
   <script>
     const translations={
@@ -46,6 +71,13 @@
     const originals=new WeakMap();
     function setLanguage(lang){document.documentElement.lang=lang;localStorage.setItem('ralfsLanguage',lang);document.querySelectorAll('a,button,h1,h2,h3,p,strong,small,.eyebrow,.section-label,.card-number').forEach(el=>{if(el.children.length)return;if(!originals.has(el))originals.set(el,el.textContent);const en=originals.get(el);el.textContent=lang==='es'?(translations[en.trim()]||en):en});document.getElementById('language-select').value=lang}
     document.getElementById('language-select').addEventListener('change',e=>setLanguage(e.target.value));setLanguage(localStorage.getItem('ralfsLanguage')||'en');
+    const quickDate=document.getElementById('quick-date');
+    const quickHour=document.getElementById('quick-hour');
+    const availabilityResult=document.getElementById('availability-result');
+    for(let hour=10;hour<=22;hour++){const option=document.createElement('option');option.value=hour;option.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'});quickHour.appendChild(option)}
+    function openAvailability(event){event.preventDefault();if(!quickDate.value){const today=new Date();quickDate.value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-')}updateAvailability();document.getElementById('availability-dialog').showModal()}
+    function updateAvailability(){if(!quickDate.value)return;const day=new Date(quickDate.value+'T12:00:00').getDay();const hour=Number(quickHour.value);let message;if(day===1||day===2){message='Club reservations are limited on this day. Please confirm with the Ralf’s team.'}else if(day===0){message=hour>=13&&hour<18?'This hour is within Sunday club hours. Check Google Calendar for scheduled events.':'Outside regular Sunday club hours (1 PM–6 PM).'}else{message=hour>=13&&hour<22?'This hour is within regular club hours. Check Google Calendar for scheduled events.':'Outside regular club hours (1 PM–9:30 PM).'}availabilityResult.textContent=message}
+    quickDate.addEventListener('change',updateAvailability);quickHour.addEventListener('change',updateAvailability);
   </script>
 </body>
 </html>
