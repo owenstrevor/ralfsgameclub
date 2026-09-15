@@ -23,7 +23,7 @@
         <section class="info-card">
           <h2 data-en="Weekly hours" data-es="Horario semanal">Weekly hours</h2>
           <div class="hours" id="hours-list">
-            <div class="hours-row" data-day="1"><span data-en="Monday" data-es="Lunes">Monday</span><strong data-en="Closed" data-es="Cerrado">Closed</strong></div>
+            <div class="hours-row" data-day="1"><span data-en="Monday" data-es="Lunes">Monday</span><strong data-en="3 PM–6 PM · After School Program only" data-es="3 PM–6 PM · Solo programa después de clases">3 PM–6 PM · After School Program only</strong></div>
             <div class="hours-row" data-day="2"><span data-en="Tuesday" data-es="Martes">Tuesday</span><strong data-en="Closed" data-es="Cerrado">Closed</strong></div>
             <div class="hours-row" data-day="3"><span data-en="Wednesday" data-es="Miércoles">Wednesday</span><strong>1 PM–10 PM</strong></div>
             <div class="hours-row" data-day="4"><span data-en="Thursday" data-es="Jueves">Thursday</span><strong>1 PM–10 PM</strong></div>
@@ -39,7 +39,7 @@
     </div>
   </main>
   <script>
-    function updateToday(){const day=new Date().getDay(),row=document.querySelector(`[data-day="${day}"]`);row?.classList.add('today');const lang=localStorage.getItem('ralfsLanguage')||'en',hours=row?.querySelector('strong')?.textContent||'',closed=day===1||day===2;document.getElementById('today-status').textContent=lang==='es'?(closed?'Cerrado hoy':`Abierto hoy · ${hours}`):(closed?'Closed today':`Open today · ${hours}`)}
+    function updateToday(){const day=new Date().getDay(),row=document.querySelector(`[data-day="${day}"]`);row?.classList.add('today');const lang=localStorage.getItem('ralfsLanguage')||'en',hours=row?.querySelector('strong')?.textContent||'',closed=day===2,monday=day===1;document.getElementById('today-status').textContent=lang==='es'?(closed?'Cerrado hoy':monday?'Solo programa después de clases hoy · 3 PM–6 PM':`Abierto hoy · ${hours}`):(closed?'Closed today':monday?'After School Program only today · 3 PM–6 PM':`Open today · ${hours}`)}
     document.addEventListener('ralfs-language-change',updateToday);document.addEventListener('DOMContentLoaded',updateToday);
   </script>
 </body>
