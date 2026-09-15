@@ -1,0 +1,44 @@
+name: Sync Luma events
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync-luma-events
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Read Ralf's public Luma calendar
+        run: python3 scripts/sync_luma_events.py
+
+      - name: Save updates
+        id: changes
+        run: |
+          if git diff --quiet -- assets/data/luma-events.json; then
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/luma-events.json
+          git commit -m "Sync Luma events"
+          git push
+          echo "updated=true" >> "$GITHUB_OUTPUT"
+
+      - name: Publish the refreshed site
+        if: steps.changes.outputs.updated == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"

@@ -1,0 +1,53 @@
+{
+  "source": "https://luma.com/ralfsgameclub?k=c",
+  "events": [
+    {
+      "id": "evt-IHDKuMJHWulZTQE",
+      "name": "Weekly Sunday World Language Table @Ralf’s",
+      "url": "https://luma.com/wz94lfi2",
+      "start_at": "2026-09-19T19:00:00.000Z",
+      "end_at": "2026-09-19T21:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/y4/217fb626-28a4-44d0-b67a-d17cf02ad611.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": []
+    },
+    {
+      "id": "evt-IBAp387s2z5BC9W",
+      "name": "BitDevs San Juan Monthly Meetup: Breaches, Vaults & Quantum-Safe Bitcoin",
+      "url": "https://luma.com/x3sr0h4m",
+      "start_at": "2026-09-23T23:00:00.000Z",
+      "end_at": "2026-09-24T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/r5/39c18d9c-13e3-48fa-a320-e540d4039fbc.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": []
+    },
+    {
+      "id": "evt-RidDEjlJmsvMtWx",
+      "name": "Board Game BAZAAR @Ralf's",
+      "url": "https://luma.com/tnnwm9wg",
+      "start_at": "2026-10-01T18:00:00.000Z",
+      "end_at": "2026-10-02T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/nl/fad35d48-67ba-4682-9d6c-c8fc0b8e900d.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 2,
+      "featured_guests": [
+        {
+          "name": "Samuel",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
+        },
+        {
+          "name": "Xavier Vazquez",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_2.png"
+        }
+      ]
+    }
+  ]
+}
