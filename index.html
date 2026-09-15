@@ -21,7 +21,7 @@
     .availability-dialog{width:min(620px,calc(100% - 28px));border:1px solid rgba(255,255,255,.28);border-radius:24px;padding:0;background:rgba(18,16,15,.88);color:#fff;box-shadow:0 28px 90px #000b;backdrop-filter:blur(22px)}
     .availability-dialog::backdrop{background:rgba(0,0,0,.58);backdrop-filter:blur(4px)}
     .calendar-modal{padding:28px}.calendar-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.calendar-modal h2{font-size:clamp(2.2rem,7vw,4rem);margin:7px 0 8px}.calendar-modal p{color:#aaa;margin:0;line-height:1.5}
-    .dialog-close{border:1px solid #555;border-radius:50%;width:42px;height:42px;background:#161616;color:#fff;font-size:1.3rem;cursor:pointer}.calendar-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 18px}.calendar-field{display:grid;gap:8px}.calendar-field label{color:#aaa;font-size:.75rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.calendar-field input,.calendar-field select{width:100%;min-height:52px;border:1px solid #555;border-radius:10px;background:#101010;color:#fff;padding:11px 13px;font:inherit;color-scheme:dark}
+    .dialog-close{border:1px solid #555;border-radius:50%;width:42px;height:42px;background:#161616;color:#fff;font-size:1.3rem;cursor:pointer}.calendar-fields{display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:12px;margin:26px 0 18px}.calendar-field{display:grid;gap:8px}.calendar-field label{color:#aaa;font-size:.75rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.calendar-field input,.calendar-field select{width:100%;min-height:52px;border:1px solid #555;border-radius:10px;background:#101010;color:#fff;padding:11px 13px;font:inherit;color-scheme:dark}
     .availability-result{border:1px solid #48423f;border-radius:12px;padding:14px;color:#d5d0ca;background:#ffffff08;margin-bottom:16px}.calendar-actions{display:flex;flex-wrap:wrap;gap:10px}.calendar-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid #555;border-radius:10px;padding:10px 15px;font-weight:800}.calendar-actions .google-link{background:#fff;color:#111}.calendar-actions .continue-link{background:var(--orange);color:#111;border-color:var(--orange)}
     @media(max-width:560px){.calendar-fields{grid-template-columns:1fr}.calendar-actions a{width:100%}}
   </style>
@@ -49,16 +49,17 @@
   <dialog class="availability-dialog" id="availability-dialog">
     <div class="calendar-modal">
       <div class="calendar-modal-head">
-        <div><div class="section-label">Ralf's calendar</div><h2>Check a date &amp; hour</h2><p>A quick calendar view for planning your visit or private event.</p></div>
+        <div><div class="section-label">Ralf's calendar</div><h2>Check your group</h2><p>Choose a date, hour, and group size. We will calculate the tables your group needs.</p></div>
         <button class="dialog-close" type="button" aria-label="Close calendar" onclick="document.getElementById('availability-dialog').close()">×</button>
       </div>
       <div class="calendar-fields">
         <div class="calendar-field"><label for="quick-date">Date</label><input id="quick-date" type="date"></div>
         <div class="calendar-field"><label for="quick-hour">Hour</label><select id="quick-hour"></select></div>
+        <div class="calendar-field"><label for="quick-guests">Guests</label><input id="quick-guests" type="number" min="1" max="100" value="6" inputmode="numeric"></div>
       </div>
       <div class="availability-result" id="availability-result">Choose a date and hour to plan your visit.</div>
       <div class="calendar-actions">
-        <a class="google-link" href="https://calendar.google.com/calendar/u/0/r/week" target="_blank" rel="noopener">Open Ralf's Google Calendar ↗</a>
+        <a class="google-link" href="https://calendar.google.com/calendar/u/0/r/day/2026/9/18" target="_blank" rel="noopener">Open Ralf's Google Calendar ↗</a>
         <a class="continue-link" href="reservations.html">Continue to reservation →</a>
       </div>
     </div>
@@ -73,11 +74,12 @@
     document.getElementById('language-select').addEventListener('change',e=>setLanguage(e.target.value));setLanguage(localStorage.getItem('ralfsLanguage')||'en');
     const quickDate=document.getElementById('quick-date');
     const quickHour=document.getElementById('quick-hour');
+    const quickGuests=document.getElementById('quick-guests');
     const availabilityResult=document.getElementById('availability-result');
     for(let hour=10;hour<=22;hour++){const option=document.createElement('option');option.value=hour;option.textContent=new Date(2000,0,1,hour).toLocaleTimeString([], {hour:'numeric'});quickHour.appendChild(option)}
     function openAvailability(event){event.preventDefault();if(!quickDate.value){const today=new Date();quickDate.value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-')}updateAvailability();document.getElementById('availability-dialog').showModal()}
-    function updateAvailability(){if(!quickDate.value)return;const day=new Date(quickDate.value+'T12:00:00').getDay();const hour=Number(quickHour.value);let message;if(day===1||day===2){message='Club reservations are limited on this day. Please confirm with the Ralf’s team.'}else if(day===0){message=hour>=13&&hour<18?'This hour is within Sunday club hours. Check Google Calendar for scheduled events.':'Outside regular Sunday club hours (1 PM–6 PM).'}else{message=hour>=13&&hour<22?'This hour is within regular club hours. Check Google Calendar for scheduled events.':'Outside regular club hours (1 PM–9:30 PM).'}availabilityResult.textContent=message}
-    quickDate.addEventListener('change',updateAvailability);quickHour.addEventListener('change',updateAvailability);
+    function updateAvailability(){if(!quickDate.value)return;const day=new Date(quickDate.value+'T12:00:00').getDay();const hour=Number(quickHour.value);const guests=Math.max(1,Number(quickGuests.value)||1);const isSunday=day===0;const isOpen=isSunday?(hour>=13&&hour<18):(day>=3&&day<=6&&hour>=13&&hour<22);if(!isOpen){availabilityResult.textContent=isSunday?'Outside regular Sunday club hours (1 PM–6 PM).':'Outside regular club reservation hours. Choose Wednesday–Saturday 1 PM–9 PM, or Sunday 1 PM–5 PM.';return}if(guests>=24){availabilityResult.textContent=guests+' guests · Private event required. Groups of 24 or more use a private package.';return}const tablesNeeded=Math.ceil(guests/6);const reservedTables=isSunday&&hour>=15&&hour<18?2:0;const openTables=8-reservedTables;const tablesAfter=openTables-tablesNeeded;const eventNote=reservedTables?' The Sunday World Languages Table is using 2 tables at this hour.':'';availabilityResult.textContent=guests+' guests · '+tablesNeeded+' table'+(tablesNeeded>1?'s':'')+' needed · '+openTables+' of 8 tables currently open · '+tablesAfter+' would remain after booking.'+eventNote}
+    quickDate.addEventListener('change',updateAvailability);quickHour.addEventListener('change',updateAvailability);quickGuests.addEventListener('input',updateAvailability);
   </script>
 </body>
 </html>
