@@ -2,19 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-IHDKuMJHWulZTQE",
-      "name": "Weekly Sunday World Language Table @Ralf’s",
-      "url": "https://luma.com/wz94lfi2",
-      "start_at": "2026-09-20T19:00:00.000Z",
-      "end_at": "2026-09-20T21:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/y4/217fb626-28a4-44d0-b67a-d17cf02ad611.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": []
-    },
-    {
       "id": "evt-IBAp387s2z5BC9W",
       "name": "BitDevs San Juan Monthly Meetup: Breaches, Vaults & Quantum-Safe Bitcoin",
       "url": "https://luma.com/x3sr0h4m",
