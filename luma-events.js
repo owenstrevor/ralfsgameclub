@@ -79,6 +79,16 @@
     return wrapper;
   }
 
+  function accessBlock(event) {
+    if (!event.access_type || !event.access_label) return null;
+
+    const wrapper = make('div', `event-access event-access--${event.access_type}`);
+    wrapper.append(make('span', 'event-access-label', event.access_label));
+    if (event.access_note) wrapper.append(make('span', 'event-access-note', event.access_note));
+    if (event.access_cta) wrapper.append(make('span', 'event-access-cta', event.access_cta));
+    return wrapper;
+  }
+
   function eventCard(event) {
     const fragment = document.createDocumentFragment();
     const date = dateParts(event.start_at);
@@ -87,16 +97,22 @@
     fragment.append(dateLine);
 
     const card = make('a', 'event-card');
+    if (!event.cover_url) card.classList.add('event-card--no-image');
     card.href = event.url;
     card.target = '_blank';
     card.rel = 'noopener';
-    card.setAttribute('aria-label', `View ${event.name} on Luma`);
+    card.setAttribute(
+      'aria-label',
+      event.access_type === 'private' ? `Register for ${event.name} on Luma` : `View ${event.name} on Luma`
+    );
 
     const copy = make('div');
     copy.append(
       make('p', 'event-time', `${TIME_FORMAT.format(new Date(event.start_at))}–${TIME_FORMAT.format(new Date(event.end_at))}`),
       make('h3', '', event.name)
     );
+    const access = accessBlock(event);
+    if (access) copy.append(access);
     const presenter = make('p', 'presenter');
     presenter.append(make('span', '', 'Presented by'), document.createTextNode(` ${event.presenter}`));
     copy.append(presenter, make('p', 'location', event.location), attendeeBlock(event));

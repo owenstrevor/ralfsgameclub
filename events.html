@@ -114,9 +114,34 @@
       transition: border-color 0.2s, transform 0.2s;
     }
     .event-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+    .event-card--no-image { grid-template-columns: 1fr; }
     .event-card > div { min-width: 0; }
     .event-time { margin-bottom: 0.65rem; color: var(--orange); font-size: 0.95rem; }
     .event-card h3 { overflow-wrap: anywhere; font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 500; line-height: 1.2; }
+    .event-access {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      gap: 0.35rem 0.7rem;
+      margin-top: 0.9rem;
+    }
+    .event-access-label {
+      grid-row: 1 / span 2;
+      align-self: stretch;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--orange);
+      border-radius: 7px;
+      color: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .event-access--private .event-access-label { background: var(--orange); color: #111; }
+    .event-access-note { color: var(--text); font-size: 0.82rem; font-weight: 500; line-height: 1.35; }
+    .event-access-cta { color: var(--orange); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
     .presenter { margin-top: 0.85rem; color: var(--text); font-size: 0.95rem; }
     .presenter span { color: var(--muted); }
     .location { margin-top: 0.45rem; color: var(--muted); font-size: 0.95rem; }
@@ -173,6 +198,8 @@
       .page-header { margin-bottom: 2.5rem; }
       .events-heading { align-items: flex-start; flex-direction: column; }
       .event-card { grid-template-columns: 1fr 112px; gap: 1rem; padding: 1.2rem; }
+      .event-access { grid-template-columns: 1fr; }
+      .event-access-label { grid-row: auto; justify-self: start; }
       .event-image { width: 112px; }
       .event-arrow { display: none; }
     }
@@ -197,10 +224,15 @@
         </div>
         <div id="events-list" aria-live="polite">
           <p class="event-date-line">Sep 23 <span>Wednesday</span></p>
-          <a class="event-card" href="https://luma.com/x3sr0h4m" target="_blank" rel="noopener" aria-label="View the BitDevs San Juan Monthly Meetup on Luma">
+          <a class="event-card" href="https://luma.com/x3sr0h4m" target="_blank" rel="noopener" aria-label="Register for the BitDevs San Juan Monthly Meetup on Luma">
           <div>
             <p class="event-time">7:00 PM–9:00 PM</p>
             <h3>BitDevs San Juan Monthly Meetup: Breaches, Vaults &amp; Quantum-Safe Bitcoin</h3>
+            <div class="event-access event-access--private">
+              <span class="event-access-label">Private event</span>
+              <span class="event-access-note">Registration required · Only registered guests may enter.</span>
+              <span class="event-access-cta">Register on Luma →</span>
+            </div>
             <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
             <p class="location">407 Calle Del Parque, San Juan</p>
             <div class="event-attendees" aria-label="No public attendees yet on Luma">
@@ -216,6 +248,11 @@
           <div>
             <p class="event-time">2:00 PM–9:00 PM</p>
             <h3>Board Game BAZAAR @Ralf's</h3>
+            <div class="event-access event-access--open">
+              <span class="event-access-label">Open-space event</span>
+              <span class="event-access-note">Open to the public · Walk-ins welcome while space is available.</span>
+              <span class="event-access-cta">View event on Luma →</span>
+            </div>
             <p class="presenter"><span>Presented by</span> Ralf's Game Club</p>
             <p class="location">407 Calle Del Parque, San Juan</p>
             <div class="event-attendees" aria-label="Two people registered on Luma: Samuel and Xavier Vazquez">
@@ -237,6 +274,6 @@
       </footer>
     </div>
   </main>
-  <script src="luma-events.js" defer></script>
+  <script src="luma-events.js?v=20260922-event-access" defer></script>
 </body>
 </html>

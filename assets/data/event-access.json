@@ -1,0 +1,14 @@
+{
+  "evt-IBAp387s2z5BC9W": {
+    "access_type": "private",
+    "access_label": "Private event",
+    "access_note": "Registration required · Only registered guests may enter.",
+    "access_cta": "Register on Luma →"
+  },
+  "evt-RidDEjlJmsvMtWx": {
+    "access_type": "open",
+    "access_label": "Open-space event",
+    "access_note": "Open to the public · Walk-ins welcome while space is available.",
+    "access_cta": "View event on Luma →"
+  }
+}
