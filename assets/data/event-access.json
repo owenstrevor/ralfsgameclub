@@ -5,10 +5,34 @@
     "access_note": "Registration required · Only registered guests may enter.",
     "access_cta": "Register on Luma →"
   },
+  "evt-ReIsZ7dVAGDcFVG": {
+    "access_type": "open",
+    "access_label": "Open-space event",
+    "access_note": "Open to the public · Walk-ins welcome while space is available.",
+    "access_cta": "View event on Luma →"
+  },
+  "evt-GGRDydMDKQAn6Ed": {
+    "access_type": "open",
+    "access_label": "Open-space event",
+    "access_note": "Open to the public · Walk-ins welcome while space is available.",
+    "access_cta": "View event on Luma →"
+  },
+  "evt-IHDKuMJHWulZTQE": {
+    "access_type": "open",
+    "access_label": "Open-space event",
+    "access_note": "Open to the public · Walk-ins welcome while space is available.",
+    "access_cta": "View event on Luma →"
+  },
   "evt-RidDEjlJmsvMtWx": {
     "access_type": "open",
     "access_label": "Open-space event",
     "access_note": "Open to the public · Walk-ins welcome while space is available.",
     "access_cta": "View event on Luma →"
+  },
+  "calev-AGW9e7osEXzKkBV": {
+    "access_type": "ticketed",
+    "access_label": "Ticketed event",
+    "access_note": "Ticket required · Admission is limited to ticket holders.",
+    "access_cta": "Get tickets →"
   }
 }

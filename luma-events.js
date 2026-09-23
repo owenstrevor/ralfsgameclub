@@ -36,6 +36,9 @@
   function attendeeBlock(event) {
     const wrapper = make('div', 'event-attendees');
     const guests = event.featured_guests || [];
+    const isLumaEvent = /^https:\/\/(?:www\.)?luma\.com\//i.test(event.url);
+
+    if (!isLumaEvent && !event.guest_count) return null;
 
     if (!event.guest_count) {
       wrapper.setAttribute('aria-label', 'No public attendees yet on Luma');
@@ -101,10 +104,10 @@
     card.href = event.url;
     card.target = '_blank';
     card.rel = 'noopener';
-    card.setAttribute(
-      'aria-label',
-      event.access_type === 'private' ? `Register for ${event.name} on Luma` : `View ${event.name} on Luma`
-    );
+    const isLumaEvent = /^https:\/\/(?:www\.)?luma\.com\//i.test(event.url);
+    const destination = isLumaEvent ? 'Luma' : 'the event website';
+    const action = event.access_type === 'private' ? 'Register for' : event.access_type === 'ticketed' ? 'Get tickets for' : 'View';
+    card.setAttribute('aria-label', `${action} ${event.name} on ${destination}`);
 
     const copy = make('div');
     copy.append(
@@ -115,7 +118,9 @@
     if (access) copy.append(access);
     const presenter = make('p', 'presenter');
     presenter.append(make('span', '', 'Presented by'), document.createTextNode(` ${event.presenter}`));
-    copy.append(presenter, make('p', 'location', event.location), attendeeBlock(event));
+    copy.append(presenter, make('p', 'location', event.location));
+    const attendees = attendeeBlock(event);
+    if (attendees) copy.append(attendees);
     card.append(copy);
 
     if (event.cover_url) {

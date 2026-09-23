@@ -29,7 +29,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-GGRDydMDKQAn6Ed",
@@ -42,7 +46,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-IHDKuMJHWulZTQE",
@@ -55,7 +63,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-RidDEjlJmsvMtWx",
@@ -94,7 +106,11 @@
       "presenter": "Calabozo Criollo, Planeta Meeple, Partidas Compartidas, Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "ticketed",
+      "access_label": "Ticketed event",
+      "access_note": "Ticket required · Admission is limited to ticket holders.",
+      "access_cta": "Get tickets →"
     }
   ]
 }
