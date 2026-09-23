@@ -45,8 +45,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/bq/6bc0074b-645f-4425-8bd8-61c76a91a2be.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Logan",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_39.png"
+        }
+      ],
       "access_type": "open",
       "access_label": "Open-space event",
       "access_note": "Open to the public · Walk-ins welcome while space is available.",
