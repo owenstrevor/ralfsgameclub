@@ -28,8 +28,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/17/1ceea49f-0661-4416-b374-2131d14fc06b.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 1,
+      "guest_count": 2,
       "featured_guests": [
+        {
+          "name": "Samuel Cruz",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_8.png"
+        },
         {
           "name": "Logan",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_39.png"
@@ -67,8 +71,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/nl/fad35d48-67ba-4682-9d6c-c8fc0b8e900d.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 2,
+      "guest_count": 3,
       "featured_guests": [
+        {
+          "name": "Alejandro Silva",
+          "avatar_url": "https://images.lumacdn.com/uploads/tp/31bd15d2-a9eb-4ea3-9b42-4674a1854070.png"
+        },
         {
           "name": "Samuel",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
