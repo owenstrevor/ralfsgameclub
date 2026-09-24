@@ -2,23 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-IBAp387s2z5BC9W",
-      "name": "BitDevs San Juan Monthly Meetup: Breaches, Vaults & Quantum-Safe Bitcoin",
-      "url": "https://luma.com/x3sr0h4m",
-      "start_at": "2026-09-23T23:00:00.000Z",
-      "end_at": "2026-09-24T01:00:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/r5/39c18d9c-13e3-48fa-a320-e540d4039fbc.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
-    },
-    {
       "id": "evt-ReIsZ7dVAGDcFVG",
       "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
       "url": "https://luma.com/gbbdaebb",
