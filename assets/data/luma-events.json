@@ -2,23 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-ReIsZ7dVAGDcFVG",
-      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
-      "url": "https://luma.com/gbbdaebb",
-      "start_at": "2026-09-24T22:00:00.000Z",
-      "end_at": "2026-09-25T01:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/nm/942e02f7-bd3d-4b4d-9a17-ed317fe9d6b7.jpg",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "access_type": "open",
-      "access_label": "Open-space event",
-      "access_note": "Open to the public · Walk-ins welcome while space is available.",
-      "access_cta": "View event on Luma →"
-    },
-    {
       "id": "evt-GGRDydMDKQAn6Ed",
       "name": "Crown of Salt: A MÖRK BORG Community RPG Session @Ralf's",
       "url": "https://luma.com/hy6q5gpq",
