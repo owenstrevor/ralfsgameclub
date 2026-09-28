@@ -147,10 +147,15 @@ def main() -> None:
     events = []
     for entry in entries:
         event = public_event(entry)
-        configured_access = (
+        configured_override = (
             access_overrides.get(event["id"])
-            or access_from_luma(entry, entry["event"])
             or access_overrides.get(f"name:{event['name']}")
+        )
+        if configured_override and configured_override.get("hidden"):
+            continue
+        configured_access = (
+            configured_override
+            or access_from_luma(entry, entry["event"])
         )
         if not configured_access and event["url"].startswith("https://luma.com/"):
             configured_access = ACCESS_PRESETS["private"]

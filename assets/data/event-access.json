@@ -5,6 +5,9 @@
     "access_note": "Registration required · Only registered guests may enter.",
     "access_cta": "Register on Luma →"
   },
+  "name:Fun & Chill Poker Hours @Ralf's": {
+    "hidden": true
+  },
   "name:Weekly Chess Meet Up @Ralf's": {
     "access_type": "open",
     "access_label": "Open-space event",
