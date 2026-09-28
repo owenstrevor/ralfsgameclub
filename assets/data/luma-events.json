@@ -95,6 +95,25 @@
       "access_cta": "View event on Luma →"
     },
     {
+      "id": "evt-vtcIj2vll7EMsmV",
+      "name": "Fun & Chill Poker Hours @Ralf's",
+      "url": "https://luma.com/p0i11kwv",
+      "start_at": "2026-10-04T22:30:00.000Z",
+      "end_at": "2026-10-05T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/u6/5d775abe-2553-4c92-9f04-ee21cebd995b.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
       "id": "evt-GffDMc12EgzDWe5",
       "name": "Weekly Chess Meet Up @Ralf's",
       "url": "https://luma.com/9v62kfq5",
@@ -245,6 +264,44 @@
       "access_label": "Open-space event",
       "access_note": "Open to the public · Walk-ins welcome while space is available.",
       "access_cta": "View event on Luma →"
+    },
+    {
+      "id": "evt-IBAp387s2z5BC9W",
+      "name": "BitDevs San Juan Monthly Meetup @Ralf's",
+      "url": "https://luma.com/x3sr0h4m",
+      "start_at": "2026-10-28T23:00:00.000Z",
+      "end_at": "2026-10-29T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/hl/45fd3c03-87a2-438e-a824-cbe9b298e602.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-6USnFcgi6jzpTSY",
+      "name": "BitDevs San Juan Monthly Meetup @Ralf's",
+      "url": "https://luma.com/rl5kplkq",
+      "start_at": "2026-12-02T23:00:00.000Z",
+      "end_at": "2026-12-03T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/8f/64e9f878-2375-47e6-bea2-78cf341f039f.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
     }
   ]
 }
