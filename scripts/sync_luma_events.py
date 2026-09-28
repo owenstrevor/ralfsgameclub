@@ -14,6 +14,27 @@ CALENDAR_URL = "https://luma.com/ralfsgameclub?k=c"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "data" / "luma-events.json"
 ACCESS_PATH = Path(__file__).resolve().parents[1] / "assets" / "data" / "event-access.json"
 
+ACCESS_PRESETS = {
+    "private": {
+        "access_type": "private",
+        "access_label": "Private event",
+        "access_note": "Registration required · Only registered guests may enter.",
+        "access_cta": "Register on Luma →",
+    },
+    "open": {
+        "access_type": "open",
+        "access_label": "Open-space event",
+        "access_note": "Open to the public · Walk-ins welcome while space is available.",
+        "access_cta": "View event on Luma →",
+    },
+    "ticketed": {
+        "access_type": "ticketed",
+        "access_label": "Ticketed event",
+        "access_note": "Ticket required · Admission is limited to ticket holders.",
+        "access_cta": "Get tickets →",
+    },
+}
+
 
 def fetch_calendar() -> str:
     request = urllib.request.Request(
@@ -52,6 +73,29 @@ def public_guest(guest: dict) -> dict:
     }
 
 
+def public_tag(tag) -> str:
+    if isinstance(tag, str):
+        return tag
+    if isinstance(tag, dict):
+        return tag.get("name") or tag.get("label") or tag.get("title") or tag.get("slug") or ""
+    return ""
+
+
+def access_from_luma(entry: dict, event: dict) -> dict:
+    tags = [public_tag(tag).strip() for tag in entry.get("tags") or []]
+    normalized = " ".join(tags).lower().replace("_", "-")
+
+    if "ticket" in normalized or "paid" in normalized:
+        return ACCESS_PRESETS["ticketed"]
+    if "open-space" in normalized or "open space" in normalized or "walk-in" in normalized:
+        return ACCESS_PRESETS["open"]
+    if "private" in normalized or "registration required" in normalized:
+        return ACCESS_PRESETS["private"]
+    if event.get("visibility") == "private":
+        return ACCESS_PRESETS["private"]
+    return {}
+
+
 def external_end_at(start_at: str, duration: str = "") -> str:
     match = re.fullmatch(r"P(?:\d+Y)?(?:\d+M)?(?:\d+D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", duration or "")
     if not match:
@@ -69,6 +113,7 @@ def public_event(entry: dict) -> dict:
     calendar = entry.get("calendar") or {}
     address = event.get("geo_address_info") or {}
     guests = [public_guest(guest) for guest in entry.get("featured_guests") or []]
+    tags = [public_tag(tag) for tag in entry.get("tags") or []]
     event_url = event["url"]
     if not event_url.startswith(("https://", "http://")):
         event_url = f"https://luma.com/{event_url}"
@@ -84,6 +129,8 @@ def public_event(entry: dict) -> dict:
         "location": address.get("short_address") or address.get("full_address") or "San Juan",
         "guest_count": entry.get("guest_count") or 0,
         "featured_guests": guests,
+        "luma_visibility": event.get("visibility"),
+        "luma_tags": [tag for tag in tags if tag],
     }
 
 
@@ -100,10 +147,14 @@ def main() -> None:
     events = []
     for entry in entries:
         event = public_event(entry)
-        event.update(
+        configured_access = (
             access_overrides.get(event["id"])
-            or access_overrides.get(f"name:{event['name']}", {})
+            or access_from_luma(entry, entry["event"])
+            or access_overrides.get(f"name:{event['name']}")
         )
+        if not configured_access and event["url"].startswith("https://luma.com/"):
+            configured_access = ACCESS_PRESETS["private"]
+        event.update(configured_access or {})
         events.append(event)
     events.sort(key=lambda item: item["start_at"])
     payload = {
@@ -115,7 +166,7 @@ def main() -> None:
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Synced {len(events)} public Luma events.")
+    print(f"Synced {len(events)} visible Luma calendar events.")
 
 
 if __name__ == "__main__":
