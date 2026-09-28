@@ -12,7 +12,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-RidDEjlJmsvMtWx",
@@ -93,7 +97,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-ua4BGWG49LAr833",
@@ -106,7 +114,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "calev-AGW9e7osEXzKkBV",
@@ -136,7 +148,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-TpMBojfzFktDWPE",
@@ -149,7 +165,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-nSApbN0xBBCh0T7",
@@ -162,7 +182,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-P9gHWoZuHMx0Pd8",
@@ -175,7 +199,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     },
     {
       "id": "evt-DYXYzsUvDGHwIuY",
@@ -188,7 +216,11 @@
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
-      "featured_guests": []
+      "featured_guests": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     }
   ]
 }

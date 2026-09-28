@@ -5,31 +5,31 @@
     "access_note": "Registration required · Only registered guests may enter.",
     "access_cta": "Register on Luma →"
   },
-  "evt-ReIsZ7dVAGDcFVG": {
+  "name:Weekly Chess Meet Up @Ralf's": {
     "access_type": "open",
     "access_label": "Open-space event",
     "access_note": "Open to the public · Walk-ins welcome while space is available.",
     "access_cta": "View event on Luma →"
   },
-  "evt-GGRDydMDKQAn6Ed": {
+  "name:Weekly Thursday Board Game Meet Up @Ralf’s": {
     "access_type": "open",
     "access_label": "Open-space event",
     "access_note": "Open to the public · Walk-ins welcome while space is available.",
     "access_cta": "View event on Luma →"
   },
-  "evt-IHDKuMJHWulZTQE": {
+  "name:Weekly Sunday World Language Table @Ralf’s": {
     "access_type": "open",
     "access_label": "Open-space event",
     "access_note": "Open to the public · Walk-ins welcome while space is available.",
     "access_cta": "View event on Luma →"
   },
-  "evt-RidDEjlJmsvMtWx": {
+  "name:Board Game BAZAAR @Ralf's": {
     "access_type": "open",
     "access_label": "Open-space event",
     "access_note": "Open to the public · Walk-ins welcome while space is available.",
     "access_cta": "View event on Luma →"
   },
-  "calev-AGW9e7osEXzKkBV": {
+  "name:Board Game Convention @Ralf's": {
     "access_type": "ticketed",
     "access_label": "Ticketed event",
     "access_note": "Ticket required · Admission is limited to ticket holders.",

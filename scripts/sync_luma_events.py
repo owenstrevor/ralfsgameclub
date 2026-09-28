@@ -100,7 +100,10 @@ def main() -> None:
     events = []
     for entry in entries:
         event = public_event(entry)
-        event.update(access_overrides.get(event["id"], {}))
+        event.update(
+            access_overrides.get(event["id"])
+            or access_overrides.get(f"name:{event['name']}", {})
+        )
         events.append(event)
     events.sort(key=lambda item: item["start_at"])
     payload = {
