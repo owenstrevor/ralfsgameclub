@@ -30,14 +30,19 @@
       "cover_url": "https://images.lumacdn.com/uploads/p0/8366c210-b621-4035-bf29-cb69c5cd685e.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Lisa A Felix",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
+      "access_type": "ticketed",
+      "access_label": "Ticketed event",
+      "access_note": "Ticket required · Admission is limited to ticket holders.",
+      "access_cta": "Get tickets →"
     },
     {
       "id": "evt-ua4BGWG49LAr833",

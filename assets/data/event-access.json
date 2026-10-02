@@ -8,6 +8,12 @@
   "name:Fun & Chill Poker Hours @Ralf's": {
     "hidden": true
   },
+  "name:The Ralf’s Poker Table: BBQ Edition @Ralf's": {
+    "access_type": "ticketed",
+    "access_label": "Ticketed event",
+    "access_note": "Ticket required · Admission is limited to ticket holders.",
+    "access_cta": "Get tickets →"
+  },
   "name:Weekly Chess Meet Up @Ralf's": {
     "access_type": "open",
     "access_label": "Open-space event",
