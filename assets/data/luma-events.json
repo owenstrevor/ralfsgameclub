@@ -21,6 +21,25 @@
       "access_cta": "View event on Luma →"
     },
     {
+      "id": "evt-7LApiHtp3MYQc42",
+      "name": "The Ralf’s Poker Table: BBQ Edition @Ralf's",
+      "url": "https://luma.com/3r1grofd",
+      "start_at": "2026-10-07T22:00:00.000Z",
+      "end_at": "2026-10-08T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/p0/8366c210-b621-4035-bf29-cb69c5cd685e.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
       "id": "evt-GffDMc12EgzDWe5",
       "name": "Weekly Chess Meet Up @Ralf's",
       "url": "https://luma.com/9v62kfq5",
