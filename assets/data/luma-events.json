@@ -30,8 +30,32 @@
       "cover_url": "https://images.lumacdn.com/uploads/p0/8366c210-b621-4035-bf29-cb69c5cd685e.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 2,
+      "guest_count": 8,
       "featured_guests": [
+        {
+          "name": "dustin goodwin",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_43.png"
+        },
+        {
+          "name": "Neil Iyer",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_6.png"
+        },
+        {
+          "name": "David Liu",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_31.png"
+        },
+        {
+          "name": "James Palawaga",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
+        },
+        {
+          "name": "Martina Trucco",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_10.png"
+        },
+        {
+          "name": "Cody",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
+        },
         {
           "name": "Monica Quaintance",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_8.png"
