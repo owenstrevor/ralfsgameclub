@@ -11,8 +11,20 @@
       "cover_url": "https://images.lumacdn.com/uploads/p0/8366c210-b621-4035-bf29-cb69c5cd685e.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 12,
+      "guest_count": 15,
       "featured_guests": [
+        {
+          "name": "Al",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_6.png"
+        },
+        {
+          "name": "George Hou",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_37.png"
+        },
+        {
+          "name": "Chris Piatt",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png"
+        },
         {
           "name": "David I",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_34.png"
@@ -40,18 +52,6 @@
         {
           "name": "David Liu",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_31.png"
-        },
-        {
-          "name": "James Palawaga",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
-        },
-        {
-          "name": "Martina Trucco",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_10.png"
-        },
-        {
-          "name": "Cody",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
         }
       ],
       "luma_visibility": "public",
