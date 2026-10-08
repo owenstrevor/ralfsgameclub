@@ -2,66 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-7LApiHtp3MYQc42",
-      "name": "The Ralf’s Poker Table: BBQ Edition @Ralf's",
-      "url": "https://luma.com/3r1grofd",
-      "start_at": "2026-10-07T22:00:00.000Z",
-      "end_at": "2026-10-08T01:00:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/p0/8366c210-b621-4035-bf29-cb69c5cd685e.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 17,
-      "featured_guests": [
-        {
-          "name": "thessy mehrain",
-          "avatar_url": "https://images.lumacdn.com/avatars/dg/273960a9-7c1d-44c9-a65e-af3e31438e7b.jpg"
-        },
-        {
-          "name": "Brad",
-          "avatar_url": "https://images.lumacdn.com/avatars/gu/230913a2-781b-4743-9c9a-9fccd178824c.jpg"
-        },
-        {
-          "name": "Al",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_6.png"
-        },
-        {
-          "name": "George Hou",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_37.png"
-        },
-        {
-          "name": "Chris Piatt",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png"
-        },
-        {
-          "name": "David I",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_34.png"
-        },
-        {
-          "name": "Samuel",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
-        },
-        {
-          "name": "Arturo A",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png"
-        },
-        {
-          "name": "Suri",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_29.png"
-        },
-        {
-          "name": "dustin goodwin",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_43.png"
-        }
-      ],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "ticketed",
-      "access_label": "Ticketed event",
-      "access_note": "Ticket required · Admission is limited to ticket holders.",
-      "access_cta": "Get tickets →"
-    },
-    {
       "id": "evt-ua4BGWG49LAr833",
       "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
       "url": "https://luma.com/ilvfeig9",
