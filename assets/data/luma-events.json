@@ -2,25 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "calev-AGW9e7osEXzKkBV",
-      "name": "Board Game Convention @Ralf's",
-      "url": "https://tabletop.events/conventions/boricon-016",
-      "start_at": "2026-10-10T14:00:00.000Z",
-      "end_at": "2026-10-11T00:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": null,
-      "presenter": "Calabozo Criollo, Planeta Meeple, Partidas Compartidas, Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": null,
-      "luma_tags": [],
-      "access_type": "ticketed",
-      "access_label": "Ticketed event",
-      "access_note": "Ticket required · Admission is limited to ticket holders.",
-      "access_cta": "Get tickets →"
-    },
-    {
       "id": "evt-zaJ4ZzX3J21t3JO",
       "name": "Weekly Sunday World Language Table @Ralf’s",
       "url": "https://luma.com/6un01li9",
