@@ -2,25 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-zaJ4ZzX3J21t3JO",
-      "name": "Weekly Sunday World Language Table @Ralf’s",
-      "url": "https://luma.com/6un01li9",
-      "start_at": "2026-10-11T19:00:00.000Z",
-      "end_at": "2026-10-11T21:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/y4/217fb626-28a4-44d0-b67a-d17cf02ad611.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "open",
-      "access_label": "Open-space event",
-      "access_note": "Open to the public · Walk-ins welcome while space is available.",
-      "access_cta": "View event on Luma →"
-    },
-    {
       "id": "evt-TpMBojfzFktDWPE",
       "name": "Weekly Chess Meet Up @Ralf's",
       "url": "https://luma.com/l2r9eopl",
