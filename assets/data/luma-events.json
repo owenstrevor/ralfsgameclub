@@ -21,6 +21,25 @@
       "access_cta": "View event on Luma →"
     },
     {
+      "id": "evt-r3gI1t0Az2K23TQ",
+      "name": "Moon Colony Bloodbath Demo @ Ralf’s",
+      "url": "https://luma.com/sniyqf1m",
+      "start_at": "2026-10-15T18:00:00.000Z",
+      "end_at": "2026-10-15T19:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/wv/e256ea9f-a360-4bab-ac75-7be03438d82c.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
       "id": "evt-nSApbN0xBBCh0T7",
       "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
       "url": "https://luma.com/gfc4sd83",
@@ -60,7 +79,7 @@
     },
     {
       "id": "evt-zGuT4kXfUIE1nxn",
-      "name": "This Friday Open Play Special Only @ Ralf’s",
+      "name": "This Friday Open Play Only @ Ralf’s",
       "url": "https://luma.com/ti46cspr",
       "start_at": "2026-10-16T22:30:00.000Z",
       "end_at": "2026-10-17T01:30:00.000Z",
@@ -68,11 +87,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/p8/c90e4869-2255-4708-9afc-fc9f13461260.jpg",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 1,
+      "guest_count": 2,
       "featured_guests": [
         {
           "name": "Alejandro Silva",
           "avatar_url": "https://images.lumacdn.com/uploads/tp/31bd15d2-a9eb-4ea3-9b42-4674a1854070.png"
+        },
+        {
+          "name": "Eugenio Gil de la Madrid",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_11.png"
         }
       ],
       "luma_visibility": "public",
@@ -92,11 +115,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/5e/70e6b548-eff0-46dc-a7ea-0a923b9a9a85.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 1,
+      "guest_count": 2,
       "featured_guests": [
         {
           "name": "Nefthali Medina",
           "avatar_url": "https://images.lumacdn.com/uploads/px/a49edc5c-95ba-43b9-852a-bd7dfd577b89.jpg"
+        },
+        {
+          "name": "Alex Acevedo",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
         }
       ],
       "luma_visibility": "public",
