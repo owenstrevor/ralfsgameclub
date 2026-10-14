@@ -59,6 +59,30 @@
       "access_cta": "Register on Luma →"
     },
     {
+      "id": "evt-zGuT4kXfUIE1nxn",
+      "name": "This Friday Open Play Special Only @ Ralf’s",
+      "url": "https://luma.com/ti46cspr",
+      "start_at": "2026-10-16T22:30:00.000Z",
+      "end_at": "2026-10-17T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/p8/c90e4869-2255-4708-9afc-fc9f13461260.jpg",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Alejandro Silva",
+          "avatar_url": "https://images.lumacdn.com/uploads/tp/31bd15d2-a9eb-4ea3-9b42-4674a1854070.png"
+        }
+      ],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
       "id": "evt-8TYVEzDuyh1r2O6",
       "name": "Friday Tabletop RPG Night: Mothership 🚀@Ralf's",
       "url": "https://luma.com/sxbvvpvx",
@@ -68,8 +92,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/5e/70e6b548-eff0-46dc-a7ea-0a923b9a9a85.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Nefthali Medina",
+          "avatar_url": "https://images.lumacdn.com/uploads/px/a49edc5c-95ba-43b9-852a-bd7dfd577b89.jpg"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
