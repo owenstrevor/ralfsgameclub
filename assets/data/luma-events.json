@@ -115,11 +115,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/5e/70e6b548-eff0-46dc-a7ea-0a923b9a9a85.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 2,
+      "guest_count": 3,
       "featured_guests": [
         {
           "name": "Nefthali Medina",
           "avatar_url": "https://images.lumacdn.com/uploads/px/a49edc5c-95ba-43b9-852a-bd7dfd577b89.jpg"
+        },
+        {
+          "name": "Samuel",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
         },
         {
           "name": "Alex Acevedo",
