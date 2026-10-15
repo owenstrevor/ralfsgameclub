@@ -21,25 +21,6 @@
       "access_cta": "View event on Luma →"
     },
     {
-      "id": "evt-oYLkPHM4ITD4u0K",
-      "name": "Thursday Board Game Night Special: Coloretto @Ralf's",
-      "url": "https://luma.com/mp7sh6dt",
-      "start_at": "2026-10-15T22:00:00.000Z",
-      "end_at": "2026-10-15T22:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/ma/5068fedb-383f-49a5-ac0c-07b158923868.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
-    },
-    {
       "id": "evt-zGuT4kXfUIE1nxn",
       "name": "This Friday Open Play Only @ Ralf’s",
       "url": "https://luma.com/ti46cspr",
