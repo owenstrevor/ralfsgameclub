@@ -2,25 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-TpMBojfzFktDWPE",
-      "name": "Weekly Chess Meet Up @Ralf's",
-      "url": "https://luma.com/l2r9eopl",
-      "start_at": "2026-10-14T22:30:00.000Z",
-      "end_at": "2026-10-15T01:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/lf/829ffc0f-70b6-4245-b2f7-3791cb2268a3.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "open",
-      "access_label": "Open-space event",
-      "access_note": "Open to the public · Walk-ins welcome while space is available.",
-      "access_cta": "View event on Luma →"
-    },
-    {
       "id": "evt-r3gI1t0Az2K23TQ",
       "name": "Moon Colony Bloodbath Demo @ Ralf’s",
       "url": "https://luma.com/sniyqf1m",
