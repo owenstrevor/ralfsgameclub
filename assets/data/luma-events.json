@@ -11,11 +11,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/p8/c90e4869-2255-4708-9afc-fc9f13461260.jpg",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 2,
+      "guest_count": 3,
       "featured_guests": [
         {
           "name": "Alejandro Silva",
           "avatar_url": "https://images.lumacdn.com/uploads/tp/31bd15d2-a9eb-4ea3-9b42-4674a1854070.png"
+        },
+        {
+          "name": "Elena",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
         },
         {
           "name": "Eugenio Gil de la Madrid",
