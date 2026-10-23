@@ -92,8 +92,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/gw/a1de7ba2-6405-44b8-ae52-6b9101e94662.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 4,
+      "guest_count": 5,
       "featured_guests": [
+        {
+          "name": "Alex Acevedo",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
+        },
         {
           "name": "Eugenio Gil de la Madrid",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_11.png"
@@ -128,8 +132,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/fi/b78d43cb-04d9-4bc1-a2a3-67c46ae694e1.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 3,
+      "guest_count": 4,
       "featured_guests": [
+        {
+          "name": "Alex Acevedo",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
+        },
         {
           "name": "Eugenio Gil de la Madrid",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_11.png"
