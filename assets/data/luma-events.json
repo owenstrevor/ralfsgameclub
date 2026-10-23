@@ -2,17 +2,41 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-DYXYzsUvDGHwIuY",
-      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
-      "url": "https://luma.com/e169ys8s",
-      "start_at": "2026-10-22T22:00:00.000Z",
-      "end_at": "2026-10-23T01:30:00.000Z",
+      "id": "evt-X3N3FK7KjfW7MLM",
+      "name": "MÖRK BORG @Ralf's",
+      "url": "https://luma.com/54ah29uq",
+      "start_at": "2026-10-25T17:00:00.000Z",
+      "end_at": "2026-10-25T22:00:00.000Z",
       "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/g8/ab488801-00a3-4ec8-a283-7a48f7fd5a42.jpg",
+      "cover_url": "https://images.lumacdn.com/uploads/pp/22d07587-dfd3-4c2f-ba40-6caf1d780ee2.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 0,
       "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-zaJ4ZzX3J21t3JO",
+      "name": "Weekly Sunday World Language Table @Ralf’s",
+      "url": "https://luma.com/6un01li9",
+      "start_at": "2026-10-25T19:00:00.000Z",
+      "end_at": "2026-10-25T21:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/1q/49e6a08c-ff52-4e75-9ecc-e46fdaf30665.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Tanairi Taylor",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_27.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "open",
@@ -43,8 +67,8 @@
       "id": "evt-ua4BGWG49LAr833",
       "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
       "url": "https://luma.com/ilvfeig9",
-      "start_at": "2026-11-05T22:00:00.000Z",
-      "end_at": "2026-11-06T01:30:00.000Z",
+      "start_at": "2026-10-29T22:00:00.000Z",
+      "end_at": "2026-10-30T01:30:00.000Z",
       "timezone": "America/Puerto_Rico",
       "cover_url": "https://images.lumacdn.com/uploads/g8/ab488801-00a3-4ec8-a283-7a48f7fd5a42.jpg",
       "presenter": "Ralf's Game Club",
@@ -57,6 +81,85 @@
       "access_label": "Open-space event",
       "access_note": "Open to the public · Walk-ins welcome while space is available.",
       "access_cta": "View event on Luma →"
+    },
+    {
+      "id": "evt-Z878lAQAUx4TAvi",
+      "name": "D&D SEMINAR FOR BEGGINERS @Ralf's",
+      "url": "https://luma.com/4lioyahu",
+      "start_at": "2026-11-06T22:00:00.000Z",
+      "end_at": "2026-11-07T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/gw/a1de7ba2-6405-44b8-ae52-6b9101e94662.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 3,
+      "featured_guests": [
+        {
+          "name": "Alexandra Feliberti García",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_1.png"
+        },
+        {
+          "name": "Samuel",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
+        },
+        {
+          "name": "Cody",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
+        }
+      ],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-NULv9xBPRBU6JJo",
+      "name": "D&D Game Master Workshop: Learn How to Run a Tabletop RPG @Ralf's",
+      "url": "https://luma.com/ad3jbxla",
+      "start_at": "2026-11-14T22:00:00.000Z",
+      "end_at": "2026-11-15T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/fi/b78d43cb-04d9-4bc1-a2a3-67c46ae694e1.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 2,
+      "featured_guests": [
+        {
+          "name": "Samuel",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
+        },
+        {
+          "name": "Cody",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
+        }
+      ],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-xOIuTwJGkz5WXge",
+      "name": "Conscious Parenting Book Talk @Ralf’s",
+      "url": "https://luma.com/ebkqql4q",
+      "start_at": "2026-11-16T22:30:00.000Z",
+      "end_at": "2026-11-17T01:00:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/0t/b606a3c5-1f74-450c-a62e-70e19aa4d57f.jpg",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
     },
     {
       "id": "evt-6USnFcgi6jzpTSY",
