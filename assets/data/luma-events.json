@@ -132,8 +132,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/fi/b78d43cb-04d9-4bc1-a2a3-67c46ae694e1.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 4,
+      "guest_count": 5,
       "featured_guests": [
+        {
+          "name": "Jorge Tirado",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_25.png"
+        },
         {
           "name": "Alex Acevedo",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
