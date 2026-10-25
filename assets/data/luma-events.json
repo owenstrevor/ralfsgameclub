@@ -11,8 +11,17 @@
       "cover_url": "https://images.lumacdn.com/uploads/pp/22d07587-dfd3-4c2f-ba40-6caf1d780ee2.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 2,
+      "featured_guests": [
+        {
+          "name": "Samuel",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
+        },
+        {
+          "name": "Cody",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
