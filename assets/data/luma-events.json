@@ -30,30 +30,6 @@
       "access_cta": "Register on Luma →"
     },
     {
-      "id": "evt-zaJ4ZzX3J21t3JO",
-      "name": "Weekly Sunday World Language Table @Ralf’s",
-      "url": "https://luma.com/6un01li9",
-      "start_at": "2026-10-25T19:00:00.000Z",
-      "end_at": "2026-10-25T21:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/1q/49e6a08c-ff52-4e75-9ecc-e46fdaf30665.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 1,
-      "featured_guests": [
-        {
-          "name": "Tanairi Taylor",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_27.png"
-        }
-      ],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "open",
-      "access_label": "Open-space event",
-      "access_note": "Open to the public · Walk-ins welcome while space is available.",
-      "access_cta": "View event on Luma →"
-    },
-    {
       "id": "evt-IBAp387s2z5BC9W",
       "name": "BitDevs San Juan Monthly Meetup @Ralf's",
       "url": "https://luma.com/x3sr0h4m",
