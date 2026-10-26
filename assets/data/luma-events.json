@@ -89,8 +89,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/fi/b78d43cb-04d9-4bc1-a2a3-67c46ae694e1.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 5,
+      "guest_count": 6,
       "featured_guests": [
+        {
+          "name": "Armando Torres",
+          "avatar_url": "https://images.lumacdn.com/uploads/13/73180870-1734-497e-8d59-43fc21b92866.png"
+        },
         {
           "name": "Jorge Tirado",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_25.png"
