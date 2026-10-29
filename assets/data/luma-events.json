@@ -30,8 +30,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/bi/e1a3a140-15ef-4744-bea3-83351296f469.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 5,
+      "guest_count": 6,
       "featured_guests": [
+        {
+          "name": "Jalaine",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_20.png"
+        },
         {
           "name": "Alex Acevedo",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
@@ -133,8 +137,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/8f/64e9f878-2375-47e6-bea2-78cf341f039f.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Camille Hood",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
