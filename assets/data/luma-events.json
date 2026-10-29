@@ -11,8 +11,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/c2/58fe7722-f570-4c4a-8853-1209d35d49f1.jpg",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Carmen",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_23.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
@@ -46,7 +51,7 @@
       "start_at": "2026-11-06T22:00:00.000Z",
       "end_at": "2026-11-07T01:00:00.000Z",
       "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/zx/21d96e78-312b-4676-95a7-765b4564c046.png",
+      "cover_url": "https://images.lumacdn.com/uploads/bi/e1a3a140-15ef-4744-bea3-83351296f469.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
       "guest_count": 5,
