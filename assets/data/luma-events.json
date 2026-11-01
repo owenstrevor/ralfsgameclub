@@ -68,8 +68,12 @@
       "cover_url": "https://images.lumacdn.com/uploads/fp/e8cf26d4-f1e7-4a6e-b8fb-7bc8b7af8f36.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 6,
+      "guest_count": 7,
       "featured_guests": [
+        {
+          "name": "Giancarlo Pérez Carrión",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_8.png"
+        },
         {
           "name": "Jalaine",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_20.png"
@@ -112,11 +116,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/fi/b78d43cb-04d9-4bc1-a2a3-67c46ae694e1.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 6,
+      "guest_count": 7,
       "featured_guests": [
         {
           "name": "Armando Torres",
           "avatar_url": "https://images.lumacdn.com/uploads/13/73180870-1734-497e-8d59-43fc21b92866.png"
+        },
+        {
+          "name": "Shmyu",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_42.png"
         },
         {
           "name": "Jorge Tirado",
