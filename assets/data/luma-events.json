@@ -49,8 +49,16 @@
       "cover_url": "https://images.lumacdn.com/uploads/fp/e8cf26d4-f1e7-4a6e-b8fb-7bc8b7af8f36.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 7,
+      "guest_count": 9,
       "featured_guests": [
+        {
+          "name": "Yanie",
+          "avatar_url": "https://images.lumacdn.com/uploads/e9/6ce2d321-cbc8-4a81-b77c-353f2a9b1ceb.jpg"
+        },
+        {
+          "name": "Carolina Colon",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_14.png"
+        },
         {
           "name": "Giancarlo Pérez Carrión",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_8.png"
