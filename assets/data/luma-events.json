@@ -2,44 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-ua4BGWG49LAr833",
-      "name": "Thursday Board Game Night: Mandarin Table @Ralf's",
-      "url": "https://luma.com/ilvfeig9",
-      "start_at": "2026-11-05T22:00:00.000Z",
-      "end_at": "2026-11-06T01:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/qw/c158ff36-e59e-4ecc-9432-ee02dd698337.jpg",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
-    },
-    {
-      "id": "evt-DYXYzsUvDGHwIuY",
-      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
-      "url": "https://luma.com/e169ys8s",
-      "start_at": "2026-11-05T22:00:00.000Z",
-      "end_at": "2026-11-06T01:30:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/g8/ab488801-00a3-4ec8-a283-7a48f7fd5a42.jpg",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "open",
-      "access_label": "Open-space event",
-      "access_note": "Open to the public · Walk-ins welcome while space is available.",
-      "access_cta": "View event on Luma →"
-    },
-    {
       "id": "evt-Z878lAQAUx4TAvi",
       "name": "D&D SEMINAR FOR BEGGINERS @Ralf's",
       "url": "https://luma.com/4lioyahu",
@@ -49,11 +11,15 @@
       "cover_url": "https://images.lumacdn.com/uploads/fp/e8cf26d4-f1e7-4a6e-b8fb-7bc8b7af8f36.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 9,
+      "guest_count": 10,
       "featured_guests": [
         {
           "name": "Yanie",
           "avatar_url": "https://images.lumacdn.com/uploads/e9/6ce2d321-cbc8-4a81-b77c-353f2a9b1ceb.jpg"
+        },
+        {
+          "name": "Delia C.",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_31.png"
         },
         {
           "name": "Carolina Colon",
