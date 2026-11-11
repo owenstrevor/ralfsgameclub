@@ -11,8 +11,21 @@
       "cover_url": "https://images.lumacdn.com/uploads/ve/48a490e9-0620-47e4-b5b3-70e5e31d64b1.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 3,
+      "featured_guests": [
+        {
+          "name": "Rachel Lanahan",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_45.png"
+        },
+        {
+          "name": "Isaac Rodgin",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_32.png"
+        },
+        {
+          "name": "Charles Bucher",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_5.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
