@@ -63,8 +63,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/0t/b606a3c5-1f74-450c-a62e-70e19aa4d57f.jpg",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Laura Adams",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_38.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "private",
