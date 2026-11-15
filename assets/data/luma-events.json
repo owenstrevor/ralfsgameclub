@@ -35,8 +35,13 @@
       "cover_url": "https://images.lumacdn.com/uploads/nm/942e02f7-bd3d-4b4d-9a17-ed317fe9d6b7.jpg",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Fernando Alers",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
+        }
+      ],
       "luma_visibility": "public",
       "luma_tags": [],
       "access_type": "open",
