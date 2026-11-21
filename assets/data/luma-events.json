@@ -2,25 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-v1zcEVXMhLtjXZB",
-      "name": "🎬🍿 MOVIE NIGHT @ RALF’S — PRE-SALE COMING SOON",
-      "url": "https://luma.com/d66dk2xh",
-      "start_at": "2026-11-20T21:30:00.000Z",
-      "end_at": "2026-11-22T01:00:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/wi/8bd38361-eadc-457d-93e9-ca0d22030e96.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 0,
-      "featured_guests": [],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
-    },
-    {
       "id": "evt-X3N3FK7KjfW7MLM",
       "name": "MÖRK BORG @Ralf's",
       "url": "https://luma.com/54ah29uq",
