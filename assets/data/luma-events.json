@@ -2,38 +2,6 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
-      "id": "evt-X3N3FK7KjfW7MLM",
-      "name": "MÖRK BORG @Ralf's",
-      "url": "https://luma.com/54ah29uq",
-      "start_at": "2026-11-22T17:00:00.000Z",
-      "end_at": "2026-11-22T22:00:00.000Z",
-      "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/pp/22d07587-dfd3-4c2f-ba40-6caf1d780ee2.png",
-      "presenter": "Ralf's Game Club",
-      "location": "407 C. del Parque, San Juan",
-      "guest_count": 3,
-      "featured_guests": [
-        {
-          "name": "Raul",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_7.png"
-        },
-        {
-          "name": "Samuel",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png"
-        },
-        {
-          "name": "Cody",
-          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_0.png"
-        }
-      ],
-      "luma_visibility": "public",
-      "luma_tags": [],
-      "access_type": "private",
-      "access_label": "Private event",
-      "access_note": "Registration required · Only registered guests may enter.",
-      "access_cta": "Register on Luma →"
-    },
-    {
       "id": "evt-b2POBLzF5CecZGZ",
       "name": "Learn To Play Catan At Ralfs 🎲",
       "url": "https://luma.com/dsi24d0o",
@@ -43,8 +11,24 @@
       "cover_url": "https://images.lumacdn.com/uploads/ha/3d2f7d4f-cb77-4007-ba93-836ed9c5ac60.jpg",
       "presenter": "Calendar",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 4,
+      "guest_count": 8,
       "featured_guests": [
+        {
+          "name": "Eugenio Gil de la Madrid",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_11.png"
+        },
+        {
+          "name": "Elena",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
+        },
+        {
+          "name": "Alex Torres",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_30.png"
+        },
+        {
+          "name": "Paul Arbic",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_42.png"
+        },
         {
           "name": "CHRISTIAN FERNANDEZ",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_2.png"
