@@ -8,11 +8,15 @@
       "start_at": "2026-12-02T23:00:00.000Z",
       "end_at": "2026-12-03T01:00:00.000Z",
       "timezone": "America/Puerto_Rico",
-      "cover_url": "https://images.lumacdn.com/uploads/8f/64e9f878-2375-47e6-bea2-78cf341f039f.png",
+      "cover_url": "https://images.lumacdn.com/uploads/mu/660d9cbe-347f-40eb-8fc5-19a97a5a40a2.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 1,
+      "guest_count": 2,
       "featured_guests": [
+        {
+          "name": "Carmen",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_23.png"
+        },
         {
           "name": "Camille Hood",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_12.png"
