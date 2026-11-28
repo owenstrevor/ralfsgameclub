@@ -2,6 +2,34 @@
   "source": "https://luma.com/ralfsgameclub?k=c",
   "events": [
     {
+      "id": "evt-zaJ4ZzX3J21t3JO",
+      "name": "Weekly Sunday World Language Table @Ralf’s",
+      "url": "https://luma.com/6un01li9",
+      "start_at": "2026-11-29T19:00:00.000Z",
+      "end_at": "2026-11-29T21:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/4z/650d7108-b8c8-416c-8c4e-a94ae718309f.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 2,
+      "featured_guests": [
+        {
+          "name": "Karlo",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_25.png"
+        },
+        {
+          "name": "Tanairi Taylor",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_27.png"
+        }
+      ],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
+    },
+    {
       "id": "evt-6USnFcgi6jzpTSY",
       "name": "BitDevs San Juan Monthly Meetup @Ralf's",
       "url": "https://luma.com/rl5kplkq",
@@ -11,8 +39,20 @@
       "cover_url": "https://images.lumacdn.com/uploads/mu/660d9cbe-347f-40eb-8fc5-19a97a5a40a2.png",
       "presenter": "Ralf's Game Club",
       "location": "407 C. del Parque, San Juan",
-      "guest_count": 2,
+      "guest_count": 5,
       "featured_guests": [
+        {
+          "name": "Anna",
+          "avatar_url": "https://images.lumacdn.com/uploads/v9/c914c3dd-e41e-4e82-9647-c30c4f92ca37.jpg"
+        },
+        {
+          "name": "Shawn Douglass",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_34.png"
+        },
+        {
+          "name": "Tongtong",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_47.png"
+        },
         {
           "name": "Carmen",
           "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_23.png"
@@ -28,6 +68,87 @@
       "access_label": "Private event",
       "access_note": "Registration required · Only registered guests may enter.",
       "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-TE7kiCWO8vAtWna",
+      "name": "Ralf’s Senior Social Hours | December 2026",
+      "url": "https://luma.com/r2d33rqe",
+      "start_at": "2026-12-03T17:30:00.000Z",
+      "end_at": "2026-12-17T20:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/fg/6ee9df92-ff59-40bf-bfb2-d1efadc02e15.png",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "private",
+      "access_label": "Private event",
+      "access_note": "Registration required · Only registered guests may enter.",
+      "access_cta": "Register on Luma →"
+    },
+    {
+      "id": "evt-ReIsZ7dVAGDcFVG",
+      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
+      "url": "https://luma.com/gbbdaebb",
+      "start_at": "2026-12-03T22:00:00.000Z",
+      "end_at": "2026-12-04T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/nm/942e02f7-bd3d-4b4d-9a17-ed317fe9d6b7.jpg",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 1,
+      "featured_guests": [
+        {
+          "name": "Fernando Alers",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png"
+        }
+      ],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
+    },
+    {
+      "id": "evt-DYXYzsUvDGHwIuY",
+      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
+      "url": "https://luma.com/e169ys8s",
+      "start_at": "2026-12-10T22:00:00.000Z",
+      "end_at": "2026-12-11T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/g8/ab488801-00a3-4ec8-a283-7a48f7fd5a42.jpg",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
+    },
+    {
+      "id": "evt-nSApbN0xBBCh0T7",
+      "name": "Weekly Thursday Board Game Meet Up @Ralf’s",
+      "url": "https://luma.com/gfc4sd83",
+      "start_at": "2026-12-17T22:00:00.000Z",
+      "end_at": "2026-12-18T01:30:00.000Z",
+      "timezone": "America/Puerto_Rico",
+      "cover_url": "https://images.lumacdn.com/uploads/g8/ab488801-00a3-4ec8-a283-7a48f7fd5a42.jpg",
+      "presenter": "Ralf's Game Club",
+      "location": "407 C. del Parque, San Juan",
+      "guest_count": 0,
+      "featured_guests": [],
+      "luma_visibility": "public",
+      "luma_tags": [],
+      "access_type": "open",
+      "access_label": "Open-space event",
+      "access_note": "Open to the public · Walk-ins welcome while space is available.",
+      "access_cta": "View event on Luma →"
     }
   ]
 }
